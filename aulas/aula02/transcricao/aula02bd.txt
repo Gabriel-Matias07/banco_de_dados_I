@@ -1,0 +1,407 @@
+Todo mundo que tem o arquivo, ele tem acesso a ele, de forma inteira, de forma integral.
+O que acontece aqui no nível de banco é que se eu tenho usuários, existe a possibilidade de eu fazer um filtro em cima disso.
+Eu dizer, esse usuário acessa essa tabela, esse usuário somente insere alunos, esse usuário somente consulta as informações que estão lá dentro.
+Então, aqui que eu vim falando para vocês, não é um motivo que está dentro dessa estruturazinha aqui que é chamada de três esquemas.
+Nosso esquema, por exemplo, mais externo, nível externo, seria essa forma de eu ter custo, de eu ter vários usuários ali e eu ter várias possibilidades de configurar esses usuários.
+O meu nível conceitual, que seria a forma de eu dizer, eu vou estruturar o meu banco dessa forma, é a forma de a gente começar a trabalhar com uma modelagem, que é o que a gente vai começar a ver hoje.
+E quando a gente vai para o esquema interno aqui, eu dizer como é que esses dados são gravados.
+Isso aqui estaria a nível de banco, estaria dentro do meu banco, a forma que alguém teve que ir lá programar, construir um banco para que ele funcionasse dessa forma.
+Por exemplo, eu colocava três bancos de dados aqui. Vamos dizer que esse aqui seja um Postgres, esse aqui seja um SQL e esse aqui seja um SQL Server.
+Três bancos de dados diferentes, só que três bancos de dados relacionais. Apesar deles serem diferentes, a forma de eles trabalharem em base está a mesma como o modelo relacional.
+Só que em termos de algoritmos, em termos de funcionamento, em termos de como o mundo vai funcionar, eles difendem.
+Por exemplo, SQL Server é relacionado para o Microsoft, então vai ter os seus próprios algoritmos, como é que eu vou buscar, como é que eu vou inserir um dado lá dentro.
+Então o que a gente costuma trabalhar aqui é, a nível conceitual, a gente constrói uma modelagem que pode ser aplicada a qualquer ponto de dados.
+A ideia dela, a ideia de uma separação entre as formas. Então, o meu usuário, ele tem acesso às informações, só que ele não sabe as informações do nível que ele tem para dentro.
+Para ele não importa a forma como eu modelei isso, a forma como eu construí, para ele não importa em qual ponto de dados ele está armazenando.
+O que ele quer são os dados. Prágico, aqui quando eu vou para o nível conceitual, quando eu vou para o nível de modelagem, eu não digo, por exemplo,
+vou dar um detalhe de implementação, por exemplo, se eu for falar de uma SQL eu vou tratar tudo como um tecl.
+Se eu for falar de um post, por exemplo, eu tenho uma palavra assim achada, por exemplo, chamada serial, então isso é nível de implementação.
+Quando a gente está falando do nível conceitual, eu não estou preocupado com a implementação, eu só estou preocupado em dizer,
+eu quero guardar essas informações e essas informações vão ter essa modelagem que vai ter esses dados lá dentro.
+Não importa a forma como eu for transformar isso em um modelo que a gente chama de nível interno, que a gente vai começar a se preocupar com como é que eu vou implementar isso
+como um ponto de dados horário, como um ponto de dados mais esquerdo. Então sempre que eu tenho camadas assim, pensei nisso como camadas de abstração.
+O meu ponto de dados está aqui a nível interno para um nível superior, ele não importa qual é o nível abaixo dele, o que importa é que eu tenho
+uma modelagem relacional e nessa modelagem relacional eu aplico um ponto de dados relacional.
+Então ela é genérica ao ponto que eu consegui dizer, não importa qual banco eu estou fazendo isso daqui, como para o meu usuário eu não
+impondo os detalhes internos dele, o que me conta para ele é sei lá, traga todas as fotos que eu guardei lá no banco de dados.
+Ele vai recuperar isso sem precisar saber detalhes de implementação.
+Isso é um modelo relacional básico, eu queria mostrar para vocês, para que vocês comecem a pensar nisso daqui como a gente vai estruturar um banco.
+Quando a gente coloca no modelo relacional, a gente vai ter uma estrutura de uma tabela, a tabela é uma conexão, só que em vez de eu ter tudo dentro da mesma tabela,
+é como se eu tivesse uma tabela cliente, uma tabela conta e uma tabela, por exemplo, que eu estou relacionando meu cliente com a compra.
+Beleza? Beleza? Até aqui? Então por exemplo, eu boto lá, meu cliente com o número 0 ou 15, tem o nome José, mora na rua Figueiras,
+mora na cidade de Campinas. Meu cliente 037 se chama Antônio, rua Ipê, São Paulo.
+Então quando eu pego uma informação, eu consigo ver para quem isso está associado.
+Da mesma forma que eu conseguiria fazer o inverso disso aqui, dizer quais são os meus clientes que moram em Campinas.
+E aí eu vi a partir dessa cidade, a partir desse campo, cidade, veio que eu tenho duas informações registradas ali e eu digo,
+meus clientes com o nome José e Maria moram em Campinas.
+Minha conta com o número 900 tem um salvo de 55. Minha conta com o número 900 pertence ao cliente de número 15.
+Meu cliente de número 15 é o meu cliente chamado José. Então percebo que eu consigo relacionar as tabelas.
+Por exemplo, qual a soma do salvo das fontes de marinho?
+6366. Perceba que para você descobrir isso, você precisa de Maria, é o nome.
+Você precisa ver qual é o código de Maria que é 021. Do seu código 021 você tem que vir para cá para ver que Maria tem duas fontas
+com os números 556 e 647, que são essas duas fontas daqui que dá dois salvos.
+Isso é um modelo internacional. Isso quando eu digo para vocês, Maria está associada com aquele código, aquele código está associado com isso aqui,
+esse código está associado com esses outros códigos, esse código está associado com esse aqui, está associado com o salvo.
+Isso é um modelo internacional. Isso é o que permite fazer, por exemplo, a navegação entre tabelas.
+É a existência de códigos. Esses códigos de identificação é o que vai permitir que a gente faça isso.
+O que são esses códigos quando a gente pega isso e traz, por exemplo, para nossa vida diária?
+Pode colocar isso aqui, por exemplo, número de documentos, número do seu CPF, número do seu RJF.
+Todos esses números, teoricamente, eles são números. Número de matricula de vocês aqui dentro.
+Vocês já viram que ele tem um padrão? É o ano de entrada, é o semestre e ano de entrada, não sei qual é o semestre de vocês.
+2023.1, 2023.1, depois vai vir 08.501, que é o código do curso que os sistemas devem entrar, e depois vai vir 4 números sequenciais.
+Esse é o número de matricula de vocês. A forma de você construir isso é a forma de a gente transformar em códigos,
+de forma que você consiga identificar unicamente o registro. Dentro de um modelo relacional, eu nem vou falar disso hoje,
+dentro de um modelo relacional, a gente tem que ter uma forma de identificar unicamente esses registros.
+Por exemplo, você não onde conta que se ele é sua forma de identificação, ele não pode se repetir.
+A gente chama isso de chave primária. Sua chave primária identifica unicamente um registro dentro de um padrão.
+Então aquele códigozinho lá, o código do cliente, perceba que aqui eu não tenho indiferenciação nenhuma, o código do cliente não onde conta.
+Não existe especificamente aquela identificação de chave primária. Eu estou assumindo que ele é uma chave primária.
+Pode não ser. Pode não ser porque isso aqui não é exatamente nossa modelagem. Isso aqui é só um exemplo que é o nosso modelo relacional.
+Dentro de uma modelagem, você precisa definir chaves primárias. A sua navegação, a sua interligação entre tabelas dentro de um modelo relacional
+é feita através de um relacionamento entre as tabelas. Seu relacionamento é feito através dos códigos.
+Por exemplo, como é que eu associo que uma conta pertence a um cliente? Eu vou pegar o número da conta e vou associar com o código do cliente.
+O número da minha conta, 556, é associado com o cliente 021. Então isso vai ser uma forma de eu identificar que essa conta pertence a esse cliente.
+O que a gente aumenta, o que a gente coloca, o que vem das regras de funcionamento do negócio. São coisas, por exemplo, assim.
+Se você olhar essa tabela, você vai ver que uma conta pertence ao 015, duas contas pertence ao 021 e duas contas pertence ao 037.
+Então, o que está acontecendo? Aqui existe uma regra que está dizendo que um cliente pode ter mais de uma conta.
+Você poderia também ter o contrário dos tequites. Você poderia ter, de repente, uma negação dos tequites. Dizer, não, um cliente só pode ter uma conta.
+Não existe uma regra fixa, Alex. O que existe é uma restrição que é definida pelo negócio que você está analisando.
+E aí, vai ter tequites todas, todo o lugar, vai ter essas restrições. Vai ser assim, você vai pegar seu número de matrícula de restrição.
+Você vai pegar a matrícula que você fez no semestre. E aí você vai ter lá uma regra assim. Você vê que tem pelo menos uma disciplina registrada no semestre.
+Ou sei lá, você pode ter, não existe o limite máximo, mas você pode dizer, o máximo de disciplina são sete.
+Se você está colocando o limite, seria isso daqui. O cliente pode ter mais de uma conta associada com ela.
+Para a gente chegar naquela lei, a gente começa um pouquinho atrás, quando a gente está falando deste modelo.
+Este aqui ainda é aquela modelagem, só que dividida nas camadas onde eu começo a mostrar o que é um conceito de entidade.
+O que é um conceito, o que representa um dado dentro do meu sistema. Aqui, por exemplo, eu tenho um empregado.
+E o meu empregado, quando a gente coloca no modelo abstrato, a gente vai pintar de desenhar de uma forma que não represente nenhum tipo de pano.
+E aqui no meu modelo lógico, a gente vai começar a fazer uma coisa que depende do meu modelo de sistema de SGVB.
+Então, aqui a gente vai começar a converter. São as duas coisas que a gente vai trabalhar muito nessa disciplina.
+É a construção de modelos nesse formato e a conversão de modelos para esse modelo relacional e a construção de bandos.
+Então, quando a gente fala de modelo de entidade em relacionamento, eu disse para você que isso aqui é criado na década de 70.
+Ficou na década de 76 com o empregado do Peter Schenck, que fez essa definição.
+A notação que a gente vai usar, que a gente vai ver muito, é a própria notação do Heuser-Royse, né?
+O Teodoro Itos e o Rosas, que eu mostrei para vocês ontem.
+Mas é muito, muito parecido e vai mudar alguns desenhos e uns que são diferentes.
+Então, a ideia é que qualquer modelagem de entidade em relacionamento você consiga identificar.
+Eu vou mostrar, por exemplo, para vocês a modelagem que é feita dentro de uma SQL.
+Vocês vão ver que ela é diferente, mas é possível de você identificar quando você conhece os simbolos que existem.
+Minha entidade. Minha entidade, a redenda, representa alguma coisa do meu mundo real.
+Que é alguma coisa. Um aluno, uma entidade aluno, uma entidade contavancária, uma entidade cliente,
+uma entidade disciplina, uma entidade cárcel.
+Tudo aquilo que seria uma forma de eu dizer genericamente, por exemplo, quando eu digo genericamente um aluno,
+não representa, por exemplo, um de vocês, representa todos vocês ao mesmo tempo.
+E o que eu preciso extrair dessa entidade são informações.
+É como se eu dissesse assim, aqui nessa tabela que eu criei vão estar guardadas informações dos alunos.
+Como eu vou desenho isso daqui? Vai ser um triângulo, um retângulo.
+Esse meu retângulo, e isso não muda em nenhum modelo de entidade relacionamento, ele é sempre um retângulo.
+Então todas as identificações de retângulos são basicamente, quase sempre, são as suas tabelas.
+O que pode acontecer é que pode existir uma fusão de tabelas.
+Mas a primeira ideia seria que cada retângulo vai se transformar em uma tabela, a não ser que você precise fazer fusão de tabelas.
+E lá dentro eu consigo identificar qualquer tipo de homigênio.
+Seja ele concreto, uma pessoa, ou seja ele conceitual.
+Como eu dissei, ela pode representar a disciplina do curso.
+A disciplina do curso, por exemplo, seria uma coisa distrada, ela não existe fisicamente ali.
+E aí, associado com ele, eu vou poder colocar informações.
+Eu tenho lá em cima uma entidade empregada.
+Minha entidade empregada, eu consigo dar exemplos dela.
+Os exemplos aqui, seria você dizer, como se você estivesse fazendo o seu algoritmo e você está testando.
+E aí você vai lá e diz, eu vou colocar o empregado João, eu vou colocar o empregado Maria.
+Então você está testando o seu algoritmo, você está testando a sua modelagem.
+Como se você tivesse, eu vou jogar dados lá dentro do meu banco,
+para que eu consiga utilizar esse banco com informações preenchidas.
+O meu departamento deles trabalha, o meu departamento inteiro, o meu departamento jurídico.
+Então isso daqui, a gente desenha como um retâmpago.
+E aqui seria como se eu estivesse preenchendo com informações ali, só que eu tenho registros para guardar.
+Aqui são exemplos de entidades, que vocês podem ver direitinho depois.
+Coisa genérica, que tem produto empregado, né?
+Para comer de estoque, para comprar bancária, comprar corrente.
+Qualquer coisinha que você conseguir extrair do mundo, que você diga, eu quero salvar isso aqui no banco.
+Então isso vira uma entidade lá dentro.
+Cada entidade, eu tenho características.
+Eu não vou guardar 5% das características.
+É aqui onde entra a questão de eu associar o meu banco de dados com o domínio onde eu vou trabalhar.
+Você vai ter que chegar para o cliente que você está modelando o banco,
+e você vai ter que chegar para ele e dizer o que é que você precisa de informação.
+Quais as informações que você precisa.
+Porque você não vai pegar, por exemplo, o empregado, eu tenho aqui.
+Eu tenho uma informação de nome, eu tenho uma informação de interesse, eu tenho uma informação de salário.
+Essas são as informações dele.
+Dependendo do sistema, você pode querer saber se esse empregado tem filhos ou não.
+Quantos filhos ou não.
+Você pode querer saber qual o histórico profissional de informação dele ou não.
+Então, depende do sistema onde você está construindo esse nome.
+Porque quando a gente considera que um empregado, um departamento, qualquer coisa,
+que tem dezenas de informações que vocês poderiam acrescentar de forma aleatória
+e que estariam relacionados com o tempo aqui.
+Quem vai lhe dizer isso? É o seu cliente.
+Quem vai lhe dizer? É o seu cliente a partir do negócio dele.
+Ele vai lhe dizer, tá, eu tenho essas informações aqui.
+Aqui no meio do empregado, eu preciso saber quantos filhos ele tem,
+porque aí ele recebe um benefício que é proporcional ao número de filhos que ele tem.
+Eu vou precisar saber qual a atitude, qual a formação acadêmica dele,
+porque a partir da formação acadêmica, eu consigo encaixar ele no departamento de acordo com essa formação.
+Ou isso, às vezes, não tem nada a ver com o que está lá dentro,
+e você descarta os dados que estão aqui.
+E sempre vai lhe dizer isso aos seus clientes.
+E aí o seu atributo, você vai representar dessa forma.
+Você vai puxar um tracinho, a partir da sua entidade, vai trazer uma bolinha aberta ali.
+Ele é uma bolinha aberta, e por meio do príncipe, isso daqui,
+quando eu faço essa bolinha preta, eu vou dizer que ele é uma chave primária.
+Então a gente deixa a bolinha aberta para identificar que isso aqui é um atributo,
+que ele vai ser vencido, que ele pertence a essa entidade.
+Aqui eu deixo como exemplo para que vocês pensem um pouco em cima desses contextos.
+Considerando um sistema acadêmico, três exemplos do que seriam atributos para um aluno.
+O nome dele é o principal.
+O nome, o que mais?
+A matrícula dele.
+A matrícula.
+Outros cursos que ele está associando.
+Telefone de contato, se você precisa guardar informações de contato dele.
+Professor, três atributos.
+Três ali para outro sistema acadêmico.
+Disciplinas que estão associadas.
+Uma.
+Mais.
+Uma.
+Normalmente.
+Percebam que tem coisas que elas começam a se repetir.
+Isso vai ser normal de acontecer.
+Existem formas de você tentar economizar um cento de espaço aqui.
+Mas vamos considerar que, como eu, aqui também vai ter um nome, aqui também vai ter um nome.
+Para onde se queima.
+Três caracteres.
+Código.
+Cardo horário.
+Cardo horário.
+Nome.
+Nimenta.
+Semestre.
+Pré-requisitos.
+Última turma.
+Pense com a turma de vocês.
+Porque é que você não encontra isso.
+Com uma turma velhice.
+Você tem que ocupar o semestre.
+É uma numeração dos semestres.
+Poderia de...
+Para uma sala que você queima na alocada.
+Eu poderia ter o artério.
+Essas ciclinas que queima alocadas para ela.
+E aí eu consigo fazer alguns relacionamentos.
+Dizer.
+A minha turma ela está associada com esse ciclinho.
+Então vejam que isso daqui são coisas assim.
+Vão sempre aparecer atributos que a gente vai ter que parar e olhar.
+E sentir naquele contexto que vocês estão precisando.
+Porque é que a gente não simplesmente coloca todos os atributos.
+Porque a gente sempre vai considerar que você vai armazenar.
+Você vai armazenar um dado lá dentro.
+Isso aqui significa que eu tenho um espaço sendo ocupado.
+Eu digo que...
+Eu coloco informação aqui que é desnecessária.
+Essa informação ela continua lá dentro.
+Ele vai ao próprio espaço lá dentro.
+E no final das coisas aqui não é um dado para nada.
+E aí a gente chega na última partezinha que eu queria mostrar hoje para vocês.
+Que é...
+Eu tenho o meu funcionário João.
+E eu tenho uma informação de que ele trabalha no departamento de computabilidade.
+O que é que eu tenho de um lado?
+Eu tenho os meus entregados.
+O que é que eu tenho desse outro?
+Eu tenho a minha indivídua de departamento.
+Então vejam que quando eu digo João, eu digo...
+Tá, João é o empregado.
+O meu empregado eu guardo lá a informação.
+De nome, de salário, de data de nascimento.
+Então vai com ele de contato, formação.
+Essas informações que são referentes à pessoa.
+Desse lado do meu departamento eu digo...
+Esse departamento ele funciona em tal sala.
+Esse departamento é chefiado.
+Tal pessoa nesse departamento tem um gasto anual de tanto.
+Ou tem um orçamento de tanto para gastar.
+Mas são informações próprias de cada um deles.
+Só porque eu quero representar...
+É uma coisa que...
+Não é propriamente do meu empregado.
+Tá relacionado com o meu empregado.
+Só que ele só tem um sentido quando eu associo com isso daqui.
+Então existe aqui dentro, além dos meus retângulos...
+Existe o losango.
+O meu losango é o meu relacionamento.
+No meu relacionamento eu consigo interligar entidades.
+Eu consigo dizer...
+O empregado está nesse departamento.
+Ou eu consigo fazer o contrário.
+Este departamento tem este empregado associado.
+Ou mais de um empregado associado.
+Eu consigo dizer...
+Um aluno está matriculado em uma disciplina.
+E o universo que seria essa disciplina tem...
+30 alunos matriculados.
+Então existe o...
+A entidade.
+Existem os atributos.
+Aonde eu puxo aquele tracinho com uma bolinha.
+E existe uma...
+Um relacionamento entre essas entidades.
+Este losango eu só consigo fazer ele entre entidades.
+Eu que tenho uma entidade em cada conta.
+Para que eu consiga dizer, por exemplo...
+João está associado com um departamento de contabilidade.
+Pedro está associado com um departamento pessoal.
+Paulo está associado com um financeiro.
+E Maria está associada com um jurídico.
+Essa é a informação que seria, vamos dizer assim, do mundo real.
+Essa informação aqui de cima é a informação...
+Que vocês teriam que pegar a partir do mundo real...
+E traduzir como um banco de dados.
+Porque quando a gente pega um cliente e o seu cliente não conhece...
+Ele não vai conhecer o seu sistema que você tem que desenvolver.
+Quem tem que conhecer são vocês.
+O que ele vai lhe dizer é...
+João trabalha no departamento de contabilidade.
+Essa é a informação que vem.
+O que você tem que entender a partir disso.
+Eu tenho empregados, meus empregados estão alocados em algum tipo de departamento.
+Aí tem informações que vão vir a partir.
+De uma conversa, do que você quer tratar dentro.
+Detalhes que a gente não vai entrar hoje.
+Eu tenho João associado com contabilidade.
+Eu tenho Pedro associado, por exemplo, em departamento pessoal.
+Perguntas que viriam aqui seriam assim...
+Que eu posso ter um empregado trabalhando em dois departamentos ao mesmo tempo?
+Isso é uma pergunta que só seu cliente pode responder.
+Pode ser que faça sentido, pode ser que não...
+Para ele, no negócio dele, pode ser que isso faça sentido.
+E aí é essa informação que tem que vir aqui.
+Porque o sistema está sendo construído especificamente para resolver o problema.
+Do mesmo jeito que pode ter o contrário aqui.
+Eu tenho um jurídico, meu jurídico está associado com a Maria.
+Eu posso ter mais de uma pessoa dentro do mesmo departamento.
+Ou seja, eu poderia ter cinco pessoas dentro do departamento jurídico.
+Então é um tipo de coisa que a gente tem que entender para que a gente coloque a regra dentro do banco de dados.
+E aí a gente fica nisso daqui como se fosse nosso modelo genérico.
+O que é que eu tenho?
+Relacionamento entre entidades.
+Eu faço meu losango para interligar isso daqui.
+Tenho de um lado eu tenho um retângulo, do outro lado eu tenho um retângulo.
+Aqui dentro desse relacionamento, normalmente a gente tenta colocar uma palavrinha como se fosse um verbo.
+Mas eu comecei quase a formar uma frase.
+O empregado está lotado no departamento.
+Meu departamento é lotado por essas pessoas.
+Meu aluno está matriculado naquelas disciplinas.
+Como se fosse uma palavra que você tem que formar uma frase nos dois sentidos.
+Não necessariamente ela precisa ser uma frase perfeita, mas que dê a ideia de que existe essa informação lá dentro.
+E aí eu vim por esse modelo.
+Uma pessoa é lotada no departamento.
+Qual informação eu tenho lá dentro do meu banco?
+Eu tenho de um lado um conjunto de pessoas.
+Eu tenho do outro um conjunto de departamentos.
+E eu tenho no meio uma associação.
+Essa associação tem as duas leituras que eu disse antes.
+Uma pessoa está lotada no departamento e o departamento possui uma pessoa lotada.
+Ou seja, uma pessoa que está lotada lá para trabalhar.
+Outra regra que pode vir aqui de um local.
+Todas as pessoas daqui estão associadas com todos os departamentos daqui.
+Aí vem a pergunta que vai para o seu cliente.
+Que é, eu posso ter uma pessoa que é um empregado que não está associada a nenhum departamento?
+Ou seja, é obrigatório que eu associe uma pessoa ao departamento ou não?
+Um departamento é obrigatoriamente feito com pessoas alocadas ou não?
+E a mesma pergunta que vocês podem colocar na situação acadêmica de vocês.
+Vocês como alunos vocês podem ficar sem ter nenhuma disciplina social.
+Vocês como alunos vocês podem ficar sem ter um curso social.
+É a mesma situação de vocês aqui.
+E aí você tem que ver, quando você começa a ver o funcionamento do sistema, você começa a ver esse tipo de coisa.
+Como é que seu cliente, por exemplo, vai estar?
+Vamos dizer que você como aluno você não possa, você como aluno, você é obrigatoriamente que tem um curso particular.
+Na hora que você preencher as informações do aluno, você é obrigado a dificular o curso.
+Você não consegue salvar as informações sem vincular.
+Se isso acontecer, provavelmente é porque no seu nome de dados existe a exigência de vincular o curso.
+Até porque você já era anônimo, atrito, você é associado.
+Então existe uma exigência desse tipo.
+Mas é a mesma ideia. Então essa regra, por exemplo, que eu disse aqui de se existe associação ou não,
+ela vai ter reflexo lá no front end da aplicação.
+Porque se isso não for obedecido, se isso não está claro lá no meu front end, a informação, por exemplo, vem faltando
+e quando eu chego no meu nome de dados, pode ser que essa informação seja recusada.
+Porque ele está quebrando alguma regra que existe lá dentro.
+E aí a gente volta para o mesmo modelozinho de antes.
+Cliente, conta e num veio e coloquei de cliente com conta.
+Quando a gente transforma isso em uma entidade de relacionamento, eu tenho meu cliente possui o código, nome,
+rua e cidade como atributos. A gente chama aquelas colaborinhas ali de atributos.
+E aí minha conta possui número de conta e salvo.
+E existe um relacionamento entre eles e um possui.
+Que seria meu cliente possuindo uma conta ou uma conta possuindo um cliente associado a ela.
+Este daqui é uma forma de eu modelar.
+Só que a modelagem se formou com lógica de programação, se formou com muita coisa da computação,
+existe uma certa flexibilidade ali que vai muito da forma como vocês entendem o problema.
+Essa aqui é uma modelagem que resolve esse cenário.
+Porque todos os atributos que eu tenho aqui estão representados aqui nesse modelo.
+Só que veja essa outra modelagem.
+Aqui tem uma outra modelagem que considera uma tabela parte chamada cidade.
+E na minha cidade eu tenho uma rua e o nome dessa cidade associada.
+O que seria correspondente a esses dois campos.
+Isso daqui, só que agora com três entidades e dois relacionamentos, também resolve esse mesmo problema.
+Não existe exatamente uma forma única de eu resolver, de eu pensar numa solução.
+Existem vantagens e desvantagens, por exemplo, entre os dois modelos.
+Existem formas diferentes de refletar o mesmo problema.
+O que tem coisas que bateriam, dizer assim, dizer que está errado, é se eu não representasse isso daqui.
+Ou se eu fizesse de uma forma desnecessária.
+Ou se eu tivesse um relacionamento que ainda não fosse necessário, sei lá.
+Relacionasse cidade com conta.
+Esse é um relacionamento que não existe no meu conjunto de dados.
+Mas ele estaria representado no meu banco.
+Aí seria incorreto.
+Mas, por exemplo, aqui a divisão dos atributos para uma entidade à parte não é exatamente o mesmo.
+É só uma forma diferente de você modelar o mesmo problema.
+E essa aqui é a nossa última parte.
+Dos meus relacionamentos aqui, por exemplo, eu estou considerando um médico e a realização de uma consulta e um paciente associado.
+Então, coloco um exemplo disso daqui, eu poderia dizer,
+uma médica chamada Alice vai atender um paciente Maria, ou lendo deste lado para lá, o paciente Maria vai ser atendido pela médica Alice.
+Isso daqui foi o que a gente viu até agora.
+Só que eu posso adicionar detalhes nisso daqui.
+Eu posso perguntar assim, quando é que essa consulta vai ser realizada?
+Ou eu posso perguntar aonde essa consulta vai ser realizada?
+Então, percebam que essas informações extras que estão aí, elas não são informações, por exemplo, da paciente.
+Eu não estou dizendo, por exemplo, a localização da paciente.
+Eu quero saber o local da consulta.
+Ela não é a localização do médico, ela é o local da consulta.
+Eu não estou perguntando a data relacionada com o paciente nem com o médico.
+Eu quero saber a data da consulta.
+Então, aqui a gente tem, na entidade de relacionamento, a gente tem a possibilidade de criar uma pergunta de relacionamento.
+O meu dosano, que está ali no meio, representa a minha consulta, ele pode ter informações.
+Essas informações elas vão vir enquanto vocês não conseguirem vincular os dados a nenhuma das entidades.
+Há um momento que você está ali lendo o seu diagrama e você diz, tá, a data referente a quê?
+A data da consulta, é uma data de uma venda, é uma data da matrícula que foi realizada.
+Então, se você perceber que o seu relacionamento, ele possui algumas características que não é de nenhuma das entidades que ele liga,
+não é do médico nem é do paciente, é do relacionamento, então você puxa um atributo para ele também.
+Então, por exemplo, aqui foi adicionado o dado da consulta e aí eu consigo fazer uma leitura do tipo,
+Paulo vai realizar uma consulta no dia 22, 10 de 2024, aliás, o médico Paulo vai realizar uma consulta no dia 22, 10 de 2024, paciente.
+Poderia ter um outro que seria o local, sei lá, sala de número 5.
+E aí isso também seria um outro atributo da consulta que eu puxaria ali e aí eu teria mais uma informaçãozinha aqui
+dizendo o horário e o local da consulta associado com eles.
+Aqui é um outro diagrama dizendo, por exemplo, o empregado do projeto.
+O meu empregado tem ali o nome, aqui tem uma função e aqui tem uma sigla.
+E aí eu consigo dizer, Pedro tem a função de pesquisador num projeto chamado AATOM.
+Por ele ser um atributo, aí eu consigo fazer o vínculo com os dois, só que aí vai ser a forma de eu ler, na verdade.
+Meu projeto chamado SIMPLE tem um bolsista chamado Gabriel.
+E aí eu faço a leitura em qualquer sentido que deseja, em qualquer sentido que eu queira.
+O que a gente trabalha muito é neste nível, este nível aqui, para esse nível a gente testar.
+Ele vai servir assim, de ser uma informaçãozinha no seu banco para a gente ver como o seu banco vai se comportar.
+E aí a gente vai ver essas informações aqui. Mas, amigo, tem outra loja.
+A gente está falando isso daqui.
+Tranquilo?
+Duvidas?
+Não?
+Eu queria começar com vocês, era isso, a entidade relacionada.
+Tem uma questãozinha para vocês, nascer.
+Esse aqui é um modelzinho do que seria uma entidade.
+Eu quero que vocês tenham que extrair as informações da forma mais clara possível dentro da entidade relacionada,
+de forma a identificar atributos, entidades, relacionamentos.
+Não se preocupe com nada além disso.
+Aí a gente vai usar isso aqui como base para a gente sair construindo algumas outras coisas.
+Aí vocês podem fazer como vocês quiserem. Se vocês quiserem desenhar na mão, se vocês quiserem desenhar no sótulo.
+Deixa eu colocar isso lá na cadeia que eu vou facilitar para vocês.
+Espera aí.
+Deixa eu deixar isso aí. O que eu vou fazer na chamada dos vocês?
