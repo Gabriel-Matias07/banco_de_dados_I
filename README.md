@@ -1,7 +1,3 @@
-Ótimo! Com base nessa estrutura, aqui está um README mais alinhado com o seu repositório:  
-
----
-
 # 📌 Banco de Dados I
 
 Repositório da disciplina **Banco de Dados I**, contendo materiais de estudo, diagramas e resoluções de exercícios.  
