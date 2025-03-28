@@ -1,0 +1,603 @@
+Então isso daqui seria alguém que preencheu as informações, assim como se eu colocasse informações acadêmicas, por exemplo, eu teria os nomes de vocês, as disciplinas que se fizeram, nós assim vocês nas disciplinas, as disciplinas matriculadas, os professores disciplinadas nas disciplinas.
+Tudo isso são informações, mas é a informação genérica que ele desenvolveu assim, onde eu não consigo identificar, isso aqui é o médico, isso aqui é um relacionamento.
+Quando eu tenho algo específico no meu relacionamento, eu crio o atributo deles. O médico atende a paciente.
+Quando essa consulta vai acontecer, recebo o atributo data, ele é relacionado, ele não é relacionado com o médico, porque não é um próprio médico que seria total de formação, ano de formação, especialidade, nome, celular, ou o seu paciente.
+Ele é uma coisa que só existe quando eu junto essa entidade com essa entidade.
+Quando eu junto o médico com o paciente no contexto de uma clínica, um hospital, eu consigo dizer que vai existir um encontro entre uma pessoa desse lado, uma pessoa da lei, e esse encontro a gente está dando o nome de consulta.
+Para essa consulta, eu estou dizendo que vai acontecer uma data, change, um lugar, isso.
+Então perceba que esse tipo de atributo e esse tipo de relacionamento existe para juntar as informações que estão de um lado com o outro.
+Tranquilo até aqui. Beleza?
+Esse aqui é uma atividade que eu tenho deixado para vocês lá no último slide na aula passada.
+Ela diz o seguinte, primeiro que eu queria só desclarecer para vocês, ele está em um modelo que ele não está propriamente especificando o que é que você tem que fazer.
+Porque a ideia é que quando você pega a área de terri, você tem uma certa responsabilidade quando você lida com os movimentos, sistemas, criação de alguma coisa, de precisar entender o que é que o seu cliente quer.
+O seu cliente, ele entende seu cliente, a pessoa que ele compra, uma empresa para onde você trabalha, ela tem uma expectativa de ver algo no sistema, um certo fluxo de informações do sistema.
+Mas quem entende o sistema, quem entende a modelagem, quem entende onde as coisas devem estar, são vocês.
+A gente dá a área inteira. Então a gente tem uma certa responsabilidade de extrair as informações a partir do que é dito.
+Porque nem sempre vai vir um texto muito peculiar. Vamos lá. Isso aqui você vê como se fosse um cliente listando a necessidade.
+Gostaria que meus clientes fossem capazes de navegar no meu catálogo de livros e solicitar pedidos pela internet.
+Atualmente eu aceito pedidos pelo telefone. O cliente precisa me ligar e enlumecer o título ou SBN no livro, além da quantidade desejada para a compra.
+Preparo então a remessa que contém os livros solicitados. Se não tenho cópias suficientes em estoque, solicito cópias adicionais e atraso a remessa até que as novas cópias cheguem.
+Quero enviar o pedido inteiro de um cliente de uma vez para cada livro no catálogo registrado, seu número e SBN, título ao povo, preço de adquisição, preço de venda e o ano que o livro é publicado.
+Porém, os meus clientes já é cadastrado e temo registrado seus nomes dentro do telefone e o email. Em meus sites, os clientes devem se identificar primeiro através do seu email cadastrado.
+Não é a única identificação gerada no meu sistema. Depois eles devem ser capazes de navegar no meu catálogo e solicitar pedidos pela internet.
+Percebam o seguinte, tem informações aqui que sim são do banco de dados e tem informações que não são do banco de dados.
+E são funcionalidades do sistema que devem ser desenvolvidas. Eu fiz uma separação aqui de termos. Eu marquei alguns termos ali que são importantes.
+Por exemplo, eu marquei ali em cima um termos de catálogo. Eu marquei um termos de pedido cliente AMD, porque as duas geralmente são atributos.
+Título e SBN, quantidade, estoque. Ali eu marquei remessa, solicitação de cópias adicionais e SBN, título ao povo, preço de adquisição, preço de venda e ano, nome, endereço, telefone e email número um.
+Essas são as informações, eu estou levando bem daí para mostrar algumas coisas para vocês. Nosso copo é o banco de dados.
+Nosso copo somente é parte do banco. Tem coisas aqui que a gente vai realmente ignorar, porque a gente não tem como desenvolver tudo.
+E nem tudo está dentro do nosso banco. Eu tinha colocado este aqui como final para vocês, final da aula para vocês.
+E aí tem alguns pontos que eu queria destacar para vocês a medida que a gente vai desenhar.
+Quando a gente vai colocar na nossa entidade relacionamento, a gente vai começar a ler a identificação das nossas entidades.
+Primeiro a identificação do que o seu banco tem que guardar, de que forma o seu banco vai guardar aquelas informações.
+Então quando a gente coloca aqui um sistema de, como se fosse uma livraria, que eu tenho que vender, que eu tenho que identificar clientes e que eu tenho que fazer esse gerenciamento de pedidos.
+Essas são as partes principais. Pegando além dos mais diretos, cliente, nível.
+Essas são as duas entidades mais diretas que tem a mim. São as duas entidades que a gente tem, que são mencionadas o tempo todo.
+E aí o que você pega, eu devo fazer uma extração de atributos. Meus atributos são aquelas que a gente tem ali na minha tabela que eu vou dizer.
+Eu preciso que essas informações sejam passadas. Então quando são colocadas aqui todas essas informações que eu dou para o cliente, a maioria dos meus clientes já é registrado, registrado seu nome, endereço, telefone, e-mail.
+Esses são os meus atributos e é isso que eu acabo colocando para o meu conteúdo de dados guardado.
+Eu vou colocar aqui embaixo do outro aqui, só para entender, espaço, endereço, telefone, e-mail.
+E as outras atributos que são diretos ali do meu livro são ISDN, que é o número de publicação do seu livro, o número de registro do seu livro, título, alcoó, preço, underline,
+alcoólico, aquisição, preço, venda, e-mail, nada de publicação.
+Fora isso, sempre vai existir aqui uma discussão em cima de coisas que podem ser atributos ou que são digitais.
+Eu tenho um exemplo para vocês de uma passada que era o seguinte, cliente.
+Aí eu digo, eu botei o código do cliente, o nome do meu cliente em toda essa cidade.
+Eu tenho uma só opção alternativa para ele que é ao invés de eu guardar duas cidades aqui, eu puxar uma outra entidade aqui que representa endereço.
+E aí eu guardar as informações de boa de cidade relacionadas com esse cliente.
+Então existem atributos que podem acontecer esse tipo de coisa. Um atributo que aqui pode acontecer isso é alcoó.
+Alcoó é um atributo que eu poderia dizer, eu poderia chegar e dizer, eu pensei nessa alternativa do banco como tendo uma entidadezinha extra aqui chamada de alcoó.
+Quando é que normalmente a gente faz isso? Um dos recursos do banco é impedir que você fique repetindo as informações.
+Que você tenha que ficar como se eu estivesse manualmente digitando essas informações.
+Por exemplo, quando eu chego aqui nessa tabela e adiantando para vocês um problema, quando eu chego aqui nessa tabela na coluna cidade, aqui eu estou repetindo Campinas.
+Estou repetindo Campinas. E aqui eu estou no São Paulo.
+Esse tipo de repetição, Campinas Campinas, é um forte indício de que isso aqui, isso aqui pelo menos, deveria ser uma entidade com sua própria tabela.
+Porque se eu estou repetindo, significa que aqui no lugar da repetição eu poderia usar uma referência assim.
+Aí eu diria assim, cliente 015 com o nome José, vou ignorar, cliente 015 com o nome José mora na cidade, por exemplo, o número 1.
+Aí eu teria que pegar a tabela cidade e olhar. Tabela com o número 1 representa Campinas.
+Por que eu faria, por exemplo, por que você tinha um fonte para me dar a eu fazer esse tipo de coisa?
+Vamos imaginar que isso aqui fosse sua tabela cidade. Se essa aqui fosse sua tabela na cidade, você colocaria aqui Campinas tem código 1, São Paulo tem código 2.
+Então minha tabela, que aqui em cima eu pararia fazendo uma repetição de informações para cada cliente que colocasse a minha cidade correspondente,
+eu colocaria aqui, por exemplo, ia fazer uma associação através desse código inicial aqui.
+Então naquele campo ali onde está respondendo, eu estou clicando o nome Campinas, eu colocarei simplesmente o meu número 1.
+Normalmente a gente faz isso até para evitar problemas de um usuário digita de um jeito, outro digita de outro.
+Por exemplo, aqui eu escrevi São Paulo como SP.
+Se eu tenho uma tabela aberta daquele jeito, nada impediria o usuário de digitar São Paulo, outro de digitar SP, outro de digitar São Paulo como tudo minúsculo,
+outro de digitar, por exemplo, São Paulo como tudo minúsculo.
+Seu banco não é assentado a isso. Você pode ter regras, você pode ter regras que tendem a impedir isso, mas ativamente no seu banco nada impede que aquilo não aconteça.
+Campinas como semaiúsculo, como tudo maiúsculo, como tudo minúsculo ou dessa forma. São quatro formas diferentes de escrever a palavra Campinas.
+Então uma das formas de eu evitar repetições de informações dentro do banco é eu criar um digite aparte.
+E aí ao invés de eu dizer, não, você não está empurrado aqui na sua tabela ou não está escrito Campinas assim.
+Você associa com o código. Nesse caso aqui, a gente associa com o nome.
+Aqui eu só vou colocar o nome dele. Se eu só vou colocar o nome dele eu descarto por enquanto e mantenho aqui.
+Essa daqui é a minha modelagem que eu consigo representar aqui as informações de livro e representar as informações dos meus clientes.
+Só que ali no sistema ele fala de um sistema de pedidos, um sistema de vendas.
+Um sistema de vendas. Então aqui entre as minhas duas entidades é onde eu consigo colocar o pedido.
+Aí eu vou dizer que o pedido é o que relaciona um cliente com um livro.
+Aí eu consigo colocar algumas coisas aqui.
+Aqui, por exemplo, está dizendo que se eu não tenho córbias suficientes no meu livro em estoque eu faço um pedido desses livros.
+Isso indica, por exemplo, que eu tenho uma representação aqui de um estoque de quantidade de livros.
+Quantos livros eu tenho guardado ali daquele material e o que quer dizer que o meu pedido de alguma forma tem uma quantidade.
+Observe só isso aqui com atenção. Essa quantidade daqui não necessariamente está correta dessa forma.
+Para a forma que a gente está modelando, de uma forma inicial, sim, ela está correta. Só que tem como evoluir isso daqui.
+Então, como a gente está aprofundando o conteúdo, eu vou manter a quantidade do meu pedido para dizer que o meu pedido existe uma quantidade de livros que é repetida junto.
+Esse vai ser um entendimento para a gente expandir um pouco essa situação aí.
+E tem mais um que eu ia colocar, que é número de identificação do meu cliente.
+Número A e D. Número de identificação do meu cliente usado para fazer euquímica.
+Isso é outra coisa que vocês têm que observar, que é nem sempre os seus atributos eles estão juntos.
+Eu tenho, por exemplo, informações do meu cliente, um pedaço aqui, um pedaço aqui.
+Informação de livro, do meu estoque, eu peguei as outras informações daqui.
+Então, isso você tem que começar a compor a sua modelagem de forma que você consiga olhar para aquele cenário e você dizer o seguinte.
+Eu preciso de um catálogo de livros. Meu catálogo de livros é uma listagem de livros. É uma lista de livros.
+Se eu preciso de uma lista de livros, todos os livros viviam aqui, com essas informações aqui.
+Eu não vou lá de novo que está aqui. Então, eu já estou representado.
+Isso aqui formaria o meu catálogo. Aqui eu tenho os livros, aqui eu tenho os atributos necessários.
+Por exemplo, aqui diz assim, meu cliente liga, informa esse título e esse povo SBN vão fazer uma busca,
+Eu tenho aqui o título e aqui o SBN. Você tem que olhar o seu problema e você tem que ver a sua modelagem
+e você tem que ver que a sua modelagem consegue responder todas as perguntas dela.
+Consegue resolver todos os problemas que estamos aqui.
+Vamos para outro. Eu quero que os meus clientes solicitem pedidos pela internet.
+Então, de alguma forma, eu preciso ter um registro de pedidos aqui.
+O que faria sentido aqui? Não está no conjunto desse problema, mas o que faria sentido aqui?
+Eu tenho aqui o código do meu pedido.
+Porque aí eu estou registrando o pedido quando ele vai sendo processado ali.
+Seria tipo um número de culpa, tá? Mas não está aqui nesse texto.
+O que é que tem mais? Meu cliente precisa comunhecer o título e o SBN do livro.
+Eu tenho livros e eu tenho o título e o SBN. Isso seria uma busca por nome ou pelo SBN.
+Você chega lá no sistema e você dica a informação. A informação vai lá ser consultada e volta a informação do livro.
+Aí, o meu cliente vai dizer a quantidade que ele deseja daquele livro.
+Essa quantidade que ele registra no meu pedido. Coloquei aqui, porque eu chamei a atenção para vocês,
+não necessariamente ler aqui. Para essa situação, ele vai ficar aqui.
+Até a gente derivar esse problema numa forma mais complexa.
+Prepare então a rimessa que contém todos os livros solicitados.
+Rimessa, rimessa no meu pedido, poderia ser uma entidade que representaria o que eu estou mandando nessa rimessa.
+Poderia estar representando a data que eu enviei. Poderia representar o valor do frete.
+Poderia representar o endereço de destino. Algumas informações aqui.
+Como não tem informações, ele não virou nada. Ele está simplesmente sendo representado com o nome.
+Minha rimessa dos meus pedidos é o meu pedido. Meu pedido, eu tenho que dizer, ele traí-me alguma coisa.
+E isso é como se eu tivesse em certas situações chamando de pedido e em certas situações chamando de rimessa.
+Mas ele é equipado e feito por uma quantidade que está guardado no mesmo lugar.
+Na mesma tabela onde ele está guardado. Poderia ser expandido também.
+Se eu não tenho cópias suficientes em estoque, eu solicito cópias adicionais.
+Em estoque, para eu saber se eu tenho no livro e no meu estoque, eu tenho que ir guardando a quantidade dele.
+Então eu tenho um ativo de estoque. Solicitação de cópias adicionais poderia ser uma outra entidade.
+Porque aí eu conseguiria controlar o seguinte. Alguém solicitou o livro de 500 anos.
+E solicitou 10 cópias do livro, aqui no 5. Eu preciso solicitar 5 com a distribuidora.
+E aí eu receber esse 5 que eu fechar o pedido. E aí poderia ter várias situações.
+Por exemplo, eu vou pedir 3 de uma distribuidora e 2 de outra distribuidora.
+Poderia estar registrando mais informações.
+Esse tipo de informação que eu solicito com as cópias adicionais é o tipo de situação que se volta muito na gente de pedido.
+Que meio que joga responsabilidade para a gente que entendeu o que é isso aqui.
+Entender se isso aqui precisa estar no sistema ou não.
+Então o que deveria vir aqui seria, tá? Solicitação de cópias adicionais.
+Como é que ela vai funcionar?
+Aí a pessoa tem que explicar isso.
+A pessoa tem que chegar para você e ela tem que entender isso aqui.
+Tem que passar essa informação para você.
+Se você entender que isso entra no sistema, aí você tem que ajustar sua modelagem.
+Ajusta o seu sistema de acordo com o que é pedido.
+O que às vezes o impedimento de quem está passando é...
+Eu vou solicitar com as coisas adicionais, tá?
+O sistema vai guardar essa solicitação.
+Então entra aquele problema de comunicação.
+A pessoa está dizendo uma coisa e a gente está entendendo o que é isso diferente.
+Atrás, o aniversário da Ignais Cópias chega.
+Querem enviar o pedido inteiro do cliente uma vez.
+Para cada cliente, eu tenho um set de atributos aqui.
+A maioria dos meus clientes é cadastrado com esses atributos aqui.
+Meu cliente deve se identificar através de um número de identificação.
+Meu cliente deve se identificar com um número único de identificação.
+Número de identificação em gerado é como eu dei um exemplo para vocês.
+Até eu lembro o que é um número de matrícula de vocês aqui.
+É um número que é gerado, é um número único.
+E é um número que vocês utilizam para fazer as suas solicitações no sistema.
+Nesse caso do cliente ali, o número de identificação dele não poderia ser, por exemplo, o telefone.
+Assim como o livro da UISD, né?
+Se poderia ser o quê?
+Se o identificador do cliente não poderia ser o telefone, ao invés de um número gerado.
+Pode, se você tiver isso como uma possibilidade do sistema.
+Mesma coisa que o número da gente de vocês.
+Você não vai ter número de matrícula. Se é número de matrícula, você é número de telefone.
+Do livro também, por exemplo, do UISD.
+A gente ainda não entrou nisso.
+Esse conceito que você está dizendo aqui é o seguinte.
+Nosses atributos aqui, eles têm uma bolinha aberta.
+Não confundam isso quando vocês verem no sistema, quando vocês estiverem desenhando.
+Isso aqui é uma bolinha aberta porque ele é um atributo simples.
+Ele é um atributo que está rápido representado.
+Mas existe um tipo de atributo.
+A gente vai ter uma aula só sobre isso aqui na frente.
+Ele tem uma bolinha fechada.
+Bolinha fechada quer dizer que isso aqui é um atributo de identificação primária.
+Significa que isso daqui identifica unicamente um livro em qualquer situação.
+O que é que serve de exemplo mais simples como esse daqui?
+Seu número de CPF.
+Seu número de CPF não é igual ao número de outro CPF, de outra pessoa em lugar nenhum no Brasil.
+Ou com uma deveria assim.
+Teoricamente, não é igual a um lugar nenhum porque ele é seu número de identificação.
+É a mesma ideia que número de SBN de livro é o número dele de registro.
+Aqui, quando a gente vai fazer esse tipo de análise típica,
+o que é que eu posso identificar unicamente o meu cliente?
+Aí a gente começa a olhar as coisas do tipo, o nome, ele pode se repetir?
+Pode.
+O endereço, ele pode se repetir?
+Pode.
+O telefone, ele pode se repetir?
+Não.
+Esse é o problema.
+Esse é o problema.
+Ele se repete?
+Não.
+Mas existem situações em que esse número pode mudar o número que está associado com o cliente.
+É como se alguém estivesse tentando mudar seu número de CPF.
+É como se fosse isso.
+Pode ser seu e-mail?
+Seu e-mail é único?
+É.
+Seu e-mail é único?
+Seu e-mail aqui é um identificador único?
+E o número que é gerado?
+O que eu queria colocar no modelo daquele do IFC?
+Um sistema usa um e-mail, por exemplo.
+Qual o problema de você utilizar um e-mail?
+Vamos voltar para o outro.
+Eu estou adiantando o conteúdo desse aqui.
+Não tem problema não.
+Código do meu cliente é 015.
+Código do meu cliente, isso daqui é um atributo primário.
+Significa que se eu desenhar, eu teria que atrapalhar ele em fechada daí.
+Atributo primário.
+Se ele é um atributo primário, ele é utilizado para relacionamentos.
+Então eu tenho um 015 lá e eu posso ter 015 aqui.
+Por isso que eu não sei fazer relacionamentos.
+Porque ele não se refere.
+Ele consegue identificar unicamente.
+Eu não boto, por exemplo, Maria aqui.
+Porque eu posso ter o meu cliente com o nome de Maria.
+Já eu não vou saber de quem é a compra.
+Posso ter 5 marias registradas no sistema.
+Daí eu boto aqui.
+Das contas de Maria é tudo diferente.
+Diferente de quem é uma Maria na outra agora.
+Se o sistema se perde.
+Então eu uso o número único de identificação.
+Por exemplo, o número de matricula que vocês lembram.
+Quando a solicitação se faz identificar, você se associa ao número de matricula.
+Que é o seu identificado número.
+Poderia ser 100%, mas é utilizado no número de matricula.
+Enfim.
+Por que não é bom utilizar dados como se eu fosse um telefone, um e-mail aqui?
+Esse código 015, ele aparece aqui.
+Ele aparece aqui e ele poderia aparecer em diversas partes do sistema.
+Porque é ele que é criado como relacionamento.
+Se eu tento atualizar esse código.
+Isso é uma coisa que teria que sair mexendo nas chaves de identificação.
+É possível que seja feito, mas não é recomendável assistir.
+Porque aqui existe, por exemplo, se isso é o campo de identificação.
+Existem formas de trabalhar nesse campo.
+Se eu tento utilizar, por exemplo, uma organização que não possa ser publicada ou não.
+Existe uma utilização para saber se existe um dado que é publicado ou não.
+Por exemplo, aqui eu não poderia deixar de pedir o número 015.
+Só que aqui, eu estaria trabalhando com...
+Aquele é sempre um emprego de três dígitos.
+Que é a forma que está aqui.
+Três dígitos como inteiro.
+Aí eu vou e troco aquele termo de meio.
+Que pode ter 120 caracteres de texto.
+Sempre que cada caractere eu vou considerar aí que pode ser a...
+Letra dupla.
+Para cada caractere, ele pode ser letra dupla ou com sinal de concordação.
+Então, isso dá uma variedade muito grande de cálculos que ele consegue fazer ali dentro.
+Então chaves, geralmente, ele tem um padrão mais simples assim.
+Até para seleitar o sistema e trabalhar.
+E não uma coisa mais complexa quanto o número de telefone inteiro.
+Então tem problema de atualização que eu teria aqui.
+Por exemplo, atualizar aqui em cima e atualizar aqui embaixo.
+E todo o restante do sistema.
+E tem a forma de eu trabalhar a identificação única também.
+E isso tem responsabilidade no seu banco.
+No seu banco ele vai trabalhar.
+Ele vai dizer, não, não quero minha chave como meu e meio.
+Ele vai fazer.
+Só que não é a forma melhor de se fazer isso.
+É muito mais fácil o sistema trabalhar com o campo.
+Não vai ter um conjunto mais irritado de índios.
+Porque com o campo de índios eu tenho infinidade de possibilidades ao invés.
+A gente vai chegar a ver muitos identificadores.
+Eu quero trabalhar com vocês aqui.
+É outro alvo para hoje.
+Vamos ver se está bem.
+Ah, 9 e 10.
+Voltamos aqui para este.
+Com a mesma identificação e repetindo em cliente.
+Aí eu extraí algumas informações do sistema.
+Josai com o código 015 possui uma conta que tem o número 9100.
+Maria que tem o código 021.
+Antônio possui duas contas com os números 556 e 647.
+Antônio que tem o código 037 possui duas contas com o número 647 e 807.
+Deixa eu ver se eu coloco as considerações dele.
+Não.
+Então eu só vou falar.
+Josai possui uma conta.
+Maria possui duas contas.
+Antônio possui duas contas.
+Se vocês observarem a conta de Maria e Antônio, elas têm o mesmo número.
+E então uma outra regra que é uma conta, ela pode possuir mais de um cliente social.
+E é isso que eu quero trabalhar com vocês hoje.
+São essas quantidades de relacionamento.
+Quando a gente coloca aqui, por exemplo, conta com um cliente, eu não estou dizendo que um cliente tem uma conta e que uma conta está associada com um cliente.
+Esse é o entendimento mais básico.
+O que eu quero mostrar para vocês é que meu cliente, no caso Maria, possui duas contas associadas com ela.
+E existem contas que eu tenho dois clientes associados com ela.
+E existem formas no meu sistema de eu limitar isso ou eu liberar isso.
+O que quer dizer é que eu posso fazer esse vínculo ou não.
+Eu posso fazer o meu banco rejeitar automaticamente se você vir uma regra dessa.
+Nesse tipo de situação, a gente teria que perguntar.
+Todo cliente precisa de uma conta no meu sistema.
+Ou seja, se eu cadastrar um cliente no meu sistema, eu tenho que botar uma conta associada com ele?
+Isso aqui, o que eu tenho que entender é isso do seu sistema.
+Ou é que o senhor não bebe.
+Se eu cadastrar, toda conta possui pelo menos um cliente.
+Se eu cadastrar uma conta no meu sistema, eu tenho que botar um cliente associado com ele ou não?
+Eu posso ter um cliente, uma conta que não tem um cliente associado?
+Isso você tem que extrair do seu sistema, extrair das regras.
+A sua realidade do seu governo é muito compartilhada com todas as cidades?
+Muito compartilhada?
+Com todas as cidades?
+Você não precisa?
+Não.
+Contra a sua realidade em pouco.
+Você vai levar uma realidade tão diferente.
+Ela vai ter um outro cliente e um alô.
+Um alô funcionando ali.
+E você tem outra cidade chamada cliente.
+Tem outro cliente também que já é uma doutora que já tem que botar uma conta.
+E o alô, por exemplo, ele tem que botar uma conta.
+Ele tem que botar uma conta familiar.
+É. Talvez ele está me compartilhando.
+Mas isso daqui é mais associado com esse tipo de coisa aqui.
+Vê que é sua tabela de registros que associa chaves.
+E associa número de conta com número de contas.
+Número de cliente com número de contas.
+Quando você tenta fazer alguma coisa que viola alguma regra,
+o seu banco vai automaticamente rejeitar e não vai deixar que esse relacionamento seja criado.
+Essa é a sua situação.
+Se a gente colocasse isso aqui no sistema, seria como se você estivesse colocando lá no seu fonte,
+na sua aplicação, no seu celular, na web, quando você quer.
+Então, seja obrigatório, por exemplo.
+Ele não está complicatório.
+Porque tem coisas ali que você tem que colocar.
+Você é obrigado a colocar.
+E aí, você tem que fazer isso normalmente porque o seu banco está modelado,
+eles querendo que a informação.
+Então, você cria uma forma de você relacionar eles e você dizer
+quantitativamente a quanta essa associação é relacionada.
+Vamos lá.
+Quando essas perguntas aqui elas são respondidas, ele vai lhe dar uma informação do tipo.
+Eu posso ter uma conta sem um cliente associado.
+Vamos imaginar que essa seja a pergunta que se faz.
+Então, quando eu coloco isso num banco, por exemplo,
+um banco Brasil, caro e tal, se você não pensar nesse contexto,
+talvez não faça sentido.
+Você dizer, tá, eu criei uma conta e ela não pertence a ninguém.
+Dá para vocês entenderem isso?
+Não faz sentido você dizer, existe uma conta no banco que não pertence a ninguém.
+É diferente, por exemplo, que se eu disser para vocês que
+os livros que dão na biblioteca ali, eles não estão associados nenhum de vocês.
+Não existe associação.
+E os livros lá, qual o procedimento da biblioteca em termos de funcionalidade?
+A biblioteca consegue emprestar livros.
+O empréstimo de um livro é uma função.
+É uma coisa que tem que ser implementada.
+Quando eu vou registrar um empréstimo, eu tenho que dizer, esse livro vai ser levado por essa pessoa.
+Mas o livro em si, ele não é registrado por nenhum de vocês algum.
+Porque não necessariamente vocês têm que pegar os livros que estão lá.
+Não existe obrigatória.
+Existem alguns outros atributos que já são de obrigatória.
+Se eu pegar esse livro e eu puxar uma entidade a autor, o logístico ser de confissão,
+eu consigo dizer a vocês que um livro, ele tem que ter pelo menos um autor.
+Poderia ser uma coisa, você dizer, tá, eu estou em sentido, eu considero uma editora,
+eu considero um sistema de vendas de livros, eu vou marcar as mãos dos meus autores.
+Mas lembre-se, como eu não sei fazer um registro,
+que vai me dizer assim, eu tenho três possibilidades de respostas.
+Ou a resposta vai ser zero, que eu vou dizer, tá, não é obrigatório.
+Eu vou dizer, a conta não é obrigatória.
+O livro que está para ser emprestado, ele não está associado com nenhum aluno,
+porque ele não necessariamente, ele tem que ter aquela sucessão.
+Ele pode ser uma associação de um, que seria a limitação, eu dizia assim,
+um aluno, ele pode ter no máximo uma associação com um custo.
+Um aluno em uma única associação com um custo.
+Aliás, uma e somente uma, que é o caso de vocês aqui.
+Vocês têm o número de matrícula de vocês, mas o número de matrícula de vocês
+está associado com o custo.
+E aí eu vou tentar dizer da estrutura do número de matrícula de vocês.
+Por que eu digo que é assim? Eu não tenho certeza absoluta que é, mas eu juro que seja assim.
+O número de matrícula de vocês, o número 08501, é o custo de sistemas do prário.
+Então esse número de matrícula de vocês só pode ser usado por vocês aqui.
+Tá? Mas eu vou fazer um curso de leitura.
+Vai ser gerado todo o número de matrícula de vocês por um aluno de leitura.
+Então você é associado com um aluno somente de custo, e tem uma outra possibilidade, que é um muitos.
+O que é que se é um muitos? É você dizer, os leituras na biblioteca,
+eles não estão vinculados com nenhum aluno, mas se o aluno quiser chegar lá e pegar
+5 livros, ele pode.
+Não existe obrigatoriedade, mas também não existe um limite de muitos ali.
+Então são as possibilidades que eu tenho no meu plano.
+Ou eu digo que ele não é albercatório,
+ou eu digo que ele pode estar associado a um e somente um,
+ou eu digo que ele está associado a muitos.
+Tá?
+Vai colocar três livros e vocês vão tentar facilitar.
+Para começar, a gente chama isso de cardinalidade.
+Cardinalidade no relacionamento.
+Lembra que eu mostrei para vocês que existe um rossano, isso é um relacionamento.
+O que é a cardinalidade no relacionamento?
+Quando eu mostrei para vocês a leitura, eu disse para vocês que a gente pode fazer a leitura.
+Um cliente faz um pedido de livro e o livro está no pedido de um cliente, por exemplo.
+Então existe a possibilidade de eu ler da esquerda para a direita e da direita para a esquerda.
+E aí existe o meu relacionamento.
+Eu tenho dois lados.
+Aqui eu estou mostrando para vocês um relacionamento.
+Tem dois lados.
+Pode ter três, mas a gente vai ver isso mais pra frente.
+Mas há dois lados do meu relacionamento, o que significa que eu tenho cardinalidade dos dois lados?
+O que significa minha cardinalidade?
+Quantas ocorrências de multidade podem estar associadas à outra ocorrência?
+E outra quantidade?
+Quantas ocorrências de livro eu posso colocar no pedido do meu cliente?
+E quantas ocorrências de cliente podem estar associadas ao livro?
+Ou aluno com curso, ou cliente com conta de banco, ou aluno com um livro que foi emprestado da biblioteca.
+Qualquer coisa que você relaciona com a multidade, você vai ter em forma a cardinalidade.
+E através dessas cardinalidades a gente vai definir duas coisas.
+Quantidade máxima e quantidade mínima.
+Quantos no máximo eu posso ter e quantos no mínimo eu tenho que ter.
+E aí a gente pode tentar trabalhar tudo hoje e não sei se vai dar tempo.
+Naquele gerenciamento de contas que eu mostrei para vocês, ele desenharia um gráfico como este aqui.
+Aqui seria por exemplo, Maria tem duas contas.
+Antônio tem duas contas e uma conta é compartilhada com Maria, que seria ter dois.
+E vamos lembrar o nome do outro.
+E José tem uma outra conta aqui sozinho.
+Seria um desenho, se eu fosse colocar em um conjunto um desenho, seria isso aqui.
+E aí esse aqui sobrou, esse aqui sobrou.
+Esse aqui sobrou e aí eu poderia colocar uma pergunta assim do tipo.
+Ah, eu tenho um cliente ali, aqui eu tenho um cliente e aqui eu tenho minhas contas.
+Isso aqui significa que eu posso ter clientes cadastrados sem ter uma conta social.
+Se isso fizer sentido, ok.
+Se isso não fizer sentido, isso aqui está quebrando sua rodagem no banco.
+Isso aqui está dizendo que você tem um atributo que não está fazendo um relacionamento com qualquer coisa.
+Vamos lá.
+Vamos colocar os desenhos aqui, talvez fique mais fácil.
+Vamos ver os tipos de cardinalidades que existem.
+A primeira delas é mais simples, mesmo que eu já mostrei para vocês em outras situações.
+É a cardinalidade de relacionamento que a gente chama de um pra um.
+Tem um do lado que se relaciona com o do outro.
+Então a gente desenha ele através de um, dois pontos, um.
+É a forma de eu dizer que eu tenho um número um de um lado do relacionamento com o número um do outro.
+Se a gente for traduzir um texto, a gente está dizendo que cada alcança de A está associada com uma alcança de B.
+Cada alcança de B está associada com uma alcança de A.
+Eu tenho um pra um.
+Tá tranquilo?
+Mais ou menos.
+Ainda não.
+Ainda não.
+Eu estou falando de relacionamento, é bem simples dizer que veio como se fosse uma posse.
+Eu tenho um celular.
+Esse celular é meu.
+Esse celular é meu.
+Se eu vou colocar em uma identidade, eu estou de um lado e o celular está do outro.
+Eu digo, eu tenho um celular, só que nesse caso aqui eu estou dizendo o seguinte.
+Eu posso ter um máximo de um celular.
+É como se eu estivesse dizendo isso.
+Eu posso ter um máximo, um máximo de um celular registrado.
+E aí eu retiro, esse celular é de ele.
+Então eu digo eu que eu aposto sobre ele.
+Quando eu faço o inverso, a leitura inversa seria esse celular que a gente disse é meu.
+Ele está registrado no sistema unicamente dessa forma.
+E eu como único dono dele.
+Isso é relacionamento de um para um.
+Vamos colocar uns exemplos dele.
+Vamos com um modelosinho que eu já mostrei antes para vocês.
+É como se fosse uma aloca no funcionário dentro de uma empresa.
+Tem uns exemplos mais...
+Tem alguns exemplos que são mais simples assim porque eu não tenho que explicar para vocês a lógica por trás dele.
+Para a gente tentar pegar do dia-a-dia de uma aloca que seja mais fácil.
+Eu tenho empregados que estão gerenciando para um determinado departamento.
+E aí quando eu coloco um desenho, esse um, eu tenho João associado com contabilidade, que é financeiro na área jurídica.
+A leitura que eu faço isso daqui é um para um.
+Eu tenho um daquele lado associado com um desse jeito.
+João gerencia contabilidade.
+Contabilidade é gerenciado com o João.
+João ele só pode gerenciar um departamento.
+Eu não posso e o meu banco vai impedir que eu faça isso.
+Por exemplo, colocar João como o gerente do departamento jurídico ao mesmo tempo que ele é gerente da contabilidade.
+O meu banco ele impedia esse tipo de relacionamento.
+Eu não deixaria esse tipo de informação entrar na tabela.
+Porque ele já chegaria lá e ele dizia, já existe a chave de João que está gastada no código.
+Assim como ele impede um inverso.
+Ah, eu não quero mais que João seja o gerente de contabilidade.
+Eu queria que fosse Paulo.
+Aí eu pego esse funcionário Paulo e eu associo com contabilidade.
+O meu banco de idades vai dizer, não pode porque já existe alguém associado com uma contabilidade.
+Você primeiro precisaria esconder esse relacionamento.
+Beleza?
+Tranquilo?
+É isso que é um relacionamento para um.
+Um relacionamento para um.
+Uma pessoa responsável por um setor, o setor tem uma única pessoa responsável por ele.
+Ou eu coloco isso aqui na identidade relacionamento.
+Essa é a minha apresentação.
+Como se eu estivesse escrevendo.
+Se eu quiser escrever um relacionamento pra um.
+Eu posso colocar isso aqui, um, dois, pontos, um.
+E aí eu coloco o entregado e ele insia o departamento.
+Já mostrei isso pra vocês.
+Eu tenho um de um lado com um do outro.
+Agora tem um pedacinho aqui.
+Tem gente que às vezes se enrola como escrevido.
+É a forma de ler esse entidade relacionamento.
+A forma de eu ler, ele vai começar da entidade.
+Mas ele vai usar o um do outro lado.
+Um empregado.
+Um empregado.
+Esse um que eu estou dizendo não é este.
+É um de uma entidade.
+Um representante do empregado gerencia um departamento.
+Um departamento é gerenciado.
+Por um empregado.
+Tá?
+Pegue a chave do lado oposto da entidade que vocês estão conversando ali.
+Departamento gerenciado por um empregado.
+Beleza?
+Beleza deve ir tranquilo.
+Tá bom?
+Vamos seguir.
+Aquele relacionamento um pra um.
+Significa que eu tenho uma entidade associada com uma entidade da outra.
+Aí eu tenho outro relacionamento chamado de um para muitos.
+Significa que eu tenho uma entidade de A associada com uma entidade de B.
+E uma de B associada com uma entidade de A.
+Um desenho de um.
+Um desenhozinho que eu acho que é mais fácil entender essas coisas.
+Eu tenho um departamento chamado de contabilidade.
+E eu tenho as pessoas que estão votadas nesse departamento.
+Quando eu faço esse tipo de relacionamento de um para M.
+O M pode ser isso.
+Tem várias representações aqui.
+Você vai pegar isso daqui.
+Eu estou dizendo que na contabilidade trabalham esses dois funcionários.
+Eu estou dizendo que no financeiro trabalham esses dois funcionários.
+Não tem problema porque o sistema não vai barrar a inclusão de mais de um funcionário.
+Porque eu estou dizendo pra ele que pra cada departamento você pode colocar M pessoas associadas com ele.
+Talvez eu quero colocar cinco no máximo disso aqui.
+Esse aí é uma limitação.
+Aqui no nosso modelo de entidade de A associada com uma entidade de B.
+A gente pode até colocar.
+Anualmente chegar lá e dizer.
+Eu quero dizer que na contabilidade vamos trabalhar até cinco pessoas.
+Eu posso colocar.
+Anualmente dizer.
+Eu levo isso para um banco real.
+Eu não tenho como fazer na ativamente.
+Essa é a limitação do nosso modelo relacional.
+Eu posso criar mecanismos que peçam a inclusão de mais de cinco.
+Mas não eu chegar e dizer.
+Você vai para o time de cinco você vai barrar.
+Leitura desse modelo.
+Como é que eu leio meu modelo?
+Departamento um aqui.
+Um do meu lado do meu departamento.
+E um do meu lado de empregado.
+Como é que eu leio?
+Pergunte-se do meu lado contrário.
+Um departamento.
+Em um departamento estão lotados M empregados.
+Um empregado está lotado em um departamento.
+É como se você ignorasse.
+E na leitura contrária é como se você ignorasse.
+O departamento estão lotados M empregados.
+E aí você consegue pegar o seu modelo e você consegue explicar através dessa cardinalidade.
+Porque você consegue dizer.
+Em um departamento estão lotados M empregados.
+Em um departamento estão lotados M empregados.
+Terceiro e último tipo de cardinalidade.
+Muitos para muitos, M para M, M para M, asterisco asterisco.
+É variado.
+Sempre vai ser uma coisinha assim.
+Mas não é o 1 nem o 0.
+Ele quer dizer que qualquer ocorrência de A está associada com qualquer número de B.
+Qualquer ocorrência de B está associada com qualquer número de A.
+A gente tem muitos para muitos.
+Exemplos disso daqui.
+Se a gente pegar um exemplo daqui mesmo.
+Daqui mesmo daria para a gente colocar algumas coisas como.
+Eu com profissões estou associado a muitos disciplinas.
+Beleza?
+Tranquilo isso né?
+Um professor pode ter mais de uma disciplina.
+Um professor pode ter mais de um.
+Uma disciplina ele pode ter mais de uma pessoa associada.
+Se já tiver algum assim.
+Se já tiver algum disciplina por vez de professores.
+Aqui eu fiquei por lugar de maçã.
+É pintá-los.
+E o sistema está dentro de um registro.
+Isso é um exemplo para ele.
+Mas nesse caso eu queria que falasse muito sobre isso.
+Filma o nome de dois.
+Aparece o nome de dois.
+Você pode mudar o termo.
+Você pode ter uma categoria diferente.
+Mas ainda assim.
+Quando eu estou considerando aqui só uma coisa mais genérica.
+Um professor associado com uma disciplina.
+Simplesmente você tem.
+Por exemplo nesse semestre eu estou com três disciplinas associadas.
+Eu como entidade estou associado com três disciplinas diferentes.
+Mas sei lá.
+No semestre passado eu tinha uma disciplina de estágio.
+Eu era professor de estágio.
+Tinha um outro professor associado com uma disciplina de estágio.
+Eu tinha uma disciplina.
+E eu tinha...
+Tinha uma disciplina e tinha dois professores associados.
+Assim como eu fiquei na comunidade de vocês quando nós saímos sair.
+Uma da parte.
+Vai registrar no live.
