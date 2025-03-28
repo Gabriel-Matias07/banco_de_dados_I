@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<DIAGRAMA ID="1" TIPO="tpConceitual" UniversalUnicID="C017-42-7578-59-CCC-45-B0">
+<InfoDiagrama ID="1">
+<Versao Valor="3.2.0"/>
+<Autores/>
+<Observacao/>
+<Width Valor="4096"/>
+<Height Valor="4096"/>
+<Alinhamento_v Valor="50"/>
+<Alinhamento_h Valor="60"/>
+<Zoom Valor="100"/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Localizacao Left="0" Top="0"/>
+<Realce Valor="false"/>
+</InfoDiagrama>
+<Entidade ID="2">
+<Bounds Height="58" Left="1" Top="248" Width="113"/>
+<DisablePainted Valor="false"/>
+<Texto>pessoa</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<AtributosOcultos Valor=""/>
+</Entidade>
+<Entidade ID="21">
+<Bounds Height="58" Left="484" Top="248" Width="120"/>
+<DisablePainted Valor="false"/>
+<Texto>imovel</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<AtributosOcultos Valor=""/>
+</Entidade>
+<Ligacao ID="22">
+<DisablePainted Valor="false"/>
+<Tag LinhaMestre="-1"/>
+<Dashed Valor="false"/>
+<Ancorado Valor="false"/>
+<TemSetaPontaA Valor="false"/>
+<TemSetaPontaB Valor="false"/>
+<SetaAberta Valor="true"/>
+<SetaLargura Valor="10"/>
+<Inteligente Valor="true"/>
+<Largura Valor="1"/>
+<Ligacoes PontaA="23" PontaB="2"/>
+<Pontos>
+<Ponto Left="216" Top="274"/>
+<Ponto Left="163" Top="274"/>
+<Ponto Left="163" Top="274"/>
+<Ponto Left="111" Top="274"/>
+</Pontos>
+<Cardinalidade ID="24">
+<Bounds Height="15" Left="121" Top="261" Width="35"/>
+<DisablePainted Valor="false"/>
+<Texto>Cardinalidade_1</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<TamanhoAutmatico Valor="true"/>
+<Card Valor="3"/>
+<MovimentacaoManual Valor="false"/>
+<Papel Valor=""/>
+</Cardinalidade>
+</Ligacao>
+<Relacionamento ID="23">
+<Bounds Height="50" Left="219" Top="252" Width="150"/>
+<DisablePainted Valor="false"/>
+<Texto>utiliza</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+</Relacionamento>
+<Ligacao ID="25">
+<DisablePainted Valor="false"/>
+<Tag LinhaMestre="-1"/>
+<Dashed Valor="false"/>
+<Ancorado Valor="false"/>
+<TemSetaPontaA Valor="false"/>
+<TemSetaPontaB Valor="false"/>
+<SetaAberta Valor="true"/>
+<SetaLargura Valor="10"/>
+<Inteligente Valor="true"/>
+<Largura Valor="1"/>
+<Ligacoes PontaA="21" PontaB="23"/>
+<Pontos>
+<Ponto Left="480" Top="274"/>
+<Ponto Left="423" Top="274"/>
+<Ponto Left="423" Top="274"/>
+<Ponto Left="366" Top="274"/>
+</Pontos>
+<Cardinalidade ID="26">
+<Bounds Height="15" Left="441" Top="261" Width="35"/>
+<DisablePainted Valor="false"/>
+<Texto>Cardinalidade_2</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<TamanhoAutmatico Valor="true"/>
+<Card Valor="0"/>
+<MovimentacaoManual Valor="false"/>
+<Papel Valor=""/>
+</Cardinalidade>
+</Ligacao>
+<Desenhador ID="37">
+<Bounds Height="150" Left="909" Top="457" Width="250"/>
+<DisablePainted Valor="false"/>
+<Texto/>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<Tipo Valor="1"/>
+<SetaLargura Valor="2"/>
+<SetaCor Valor="0,0,0,255"/>
+<AnguloSeta Valor="0"/>
+<DesvioX Valor="0"/>
+<DesvioY Valor="0"/>
+<SetaPontaDireita Valor="true"/>
+<SetaPontaEsquerda Valor="true"/>
+<ImagemAlpha Valor="100"/>
+<ImagemNome Valor=""/>
+<DrawerItens Valor="0"/>
+</Desenhador>
+<Entidade ID="42">
+<Bounds Height="58" Left="34" Top="382" Width="120"/>
+<DisablePainted Valor="false"/>
+<Texto>Entidade_1</Texto>
+<Observacao/>
+<Dicionario/>
+<Fonte Estilo="1" Nome="Arial" Tamanho="12"/>
+<Ancorado Valor="false"/>
+<AtributosOcultos Valor=""/>
+</Entidade>
+</DIAGRAMA>
