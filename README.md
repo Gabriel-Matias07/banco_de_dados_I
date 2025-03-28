@@ -10,6 +10,34 @@ Uma característica única deste repositório é o uso de **Inteligência Artifi
 * **Busca Facilitada:** Transcrições e resumos em texto possibilitam buscar por palavras-chave, otimizando o estudo.
 * **Flexibilidade:** Estude no seu ritmo, acessando o conteúdo em texto a qualquer hora e lugar.
 
+## Transcrição de Aulas com Whisper
+
+As transcrições das aulas são geradas utilizando o Whisper, uma ferramenta de reconhecimento de fala de código aberto desenvolvida pela OpenAI.
+
+### Como as Transcrições são Feitas
+
+O processo de transcrição envolve os seguintes passos:
+
+1.  **Instalação do Whisper:** O Whisper é instalado utilizando o gerenciador de pacotes pip:
+
+    ```bash
+    !pip install git+https://github.com/openai/whisper.git
+    ```
+
+2.  **Instalação do FFmpeg:** O FFmpeg é uma ferramenta de linha de comando utilizada pelo Whisper para processar arquivos de áudio. Ele pode ser instalado utilizando o gerenciador de pacotes apt:
+
+    ```bash
+    !sudo apt update && sudo apt install ffmpeg
+    ```
+
+3.  **Transcrição do Áudio:** O Whisper é executado na linha de comando, fornecendo o arquivo de áudio como entrada e o modelo a ser utilizado. O modelo "medium" oferece um bom equilíbrio entre velocidade e precisão:
+
+    ```bash
+    !whisper "aulaexemplo.mp3" --model medium
+    ```
+
+O Whisper gera um arquivo de texto contendo a transcrição da aula.
+
 ##  Estrutura do Repositório
 
  **aulas/** → Material organizado por aulas (exemplo: `aula01`, `aula02`, etc.), incluindo transcrições e resumos gerados por IA.
@@ -34,9 +62,9 @@ Uma característica única deste repositório é o uso de **Inteligência Artifi
 ##  Como Usar
 
 1.  Clone este repositório:
-    ```bash
-    git clone https://github.com/seu-usuario/banco_de_dados_I.git
-    ```
+     ```bash
+     git clone https://github.com/seu-usuario/banco_de_dados_I.git
+     ```
 2.  Explore os materiais dentro das pastas `aulas` e `praticas/estudos_de_caso`, aproveitando as transcrições e resumos gerados por IA.
 3.  Utilize os diagramas e estudos de caso para praticar modelagem e consultas SQL.
 
