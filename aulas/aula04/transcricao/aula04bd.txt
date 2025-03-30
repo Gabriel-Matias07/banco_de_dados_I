@@ -1,0 +1,401 @@
+[00:00.000 --> 00:09.000]  Eu quero representar entidades. Além da forma de eu representar quem se eleita com quem,
+[00:09.000 --> 00:16.000]  eu, você ou alguém vai ter que representar no bando o fator de quantidade.
+[00:16.000 --> 00:23.000]  Esse fator de quantidade, ele diz respeito à forma que essas entidades elas vão interagir.
+[00:24.000 --> 00:30.000]  E isso é necessário de ser feito para congelar o controle dessas entidades.
+[00:30.000 --> 00:35.000]  Então, se não tivesse esse controle, ele ia ficar noitinho.
+[00:38.000 --> 00:46.000]  Só que essa regra faz parte da atividade de relacionamento e aí a gente tem que colocar lá
+[00:46.000 --> 00:49.000]  essa partezinha que a gente chama de cardinalidade.
+[00:49.000 --> 00:52.000]  Como relacionamento e cardinalidade.
+[00:52.000 --> 00:58.000]  Todo relacionamento precisa ser identificado, porque se eu não identifico isso,
+[00:58.000 --> 01:01.000]  o bando tem que estar livre e ficar preenchido.
+[01:01.000 --> 01:06.000]  Então ele sempre vai ter uma restrição ali para que ele possa controlar,
+[01:06.000 --> 01:09.000]  como os exemplos que eu dei para vocês.
+[01:09.000 --> 01:13.000]  Eu quero controlar quantos cursos vão ser colocados no lado.
+[01:13.000 --> 01:18.000]  Eu quero controlar quantos professores podem trabalhar na disciplina.
+[01:18.000 --> 01:20.000]  Isso é feio.
+[01:20.000 --> 01:24.000]  Quando eu estou desenvolvendo um sistema, isso é feio, amigo, desse sistema.
+[01:24.000 --> 01:29.000]  Então se eu estou lá, fazer um novo sistema, já no Python, PHP, qualquer coisa lá,
+[01:29.000 --> 01:33.000]  eu posso embutir essa regra no meu back-end.
+[01:33.000 --> 01:36.000]  Então eu vou lá e coloco essa restrição.
+[01:37.000 --> 01:40.000]  Mas isso também é feito, amigo, de bando.
+[01:40.000 --> 01:42.000]  Para que a gente tenha os dois lados.
+[01:42.000 --> 01:51.000]  Para que a gente tenha uma regra que ela vai passando desde o front-end até o back-end.
+[01:51.000 --> 01:55.000]  E no front-end ele vai ter impacto também, quando eu quiser definir,
+[01:55.000 --> 01:58.000]  principalmente em questões de obrigatividade.
+[01:58.000 --> 02:05.000]  Se eu digo, por exemplo, que um aluno tem uma cardinalidade indica que ele tem que ter tudo
+[02:05.000 --> 02:12.000]  que eu não estou vinculado, eu não vou conseguir cadastrar um aluno sem vincular um curso.
+[02:12.000 --> 02:15.000]  Eu vou ser obrigado a fazer isso.
+[02:15.000 --> 02:22.000]  E aí, o que vocês têm que ter muita atenção é seu modelo humano de dados primeiro.
+[02:22.000 --> 02:26.000]  Quando a gente está desenvolvendo esse sistema, tem duas possibilidades de fazer.
+[02:26.000 --> 02:32.000]  Ou vocês vão começar de baixo para cima, numa bordagem,
+[02:32.000 --> 02:38.000]  uma bordagem como um down-up, que o modelo humano faça o meu back-end,
+[02:38.000 --> 02:42.000]  faça o meu front, ou vocês vão começar de cima para baixo.
+[02:42.000 --> 02:49.000]  E ao final eu faço o meu front com minhas regras, faço o meu back com minhas regras,
+[02:49.000 --> 02:54.000]  e faço o meu bando para receber, faço o meu front, o meu back e o meu bando
+[02:54.000 --> 02:57.000]  para receber essas informações.
+[02:57.000 --> 03:01.000]  E essas regras, elas têm que ser passadas pelas formadas.
+[03:01.000 --> 03:09.000]  Aí, por exemplo, se eu digo para o meu aluno que ele só pode ser cadastrado com um curso,
+[03:09.000 --> 03:13.000]  no meu front-end, por exemplo, eu tenho uma marinação,
+[03:13.000 --> 03:17.000]  se eu estou preenchendo um curso ou não, antes de eu enviar o seu modelo humano de dados,
+[03:17.000 --> 03:20.000]  é aquele canto quando vocês estão preenchendo um formulario que tem lá,
+[03:20.000 --> 03:26.000]  mas tem isso, que você clica em enviar e ele diz, eu não consigo enviar para onde você está,
+[03:26.000 --> 03:32.000]  você precisa fornecer alguma informação aí que é obrigatória.
+[03:32.000 --> 03:39.000]  Então, o seu bando foi feito assim, o seu front-end, ele tem reflexo nisso,
+[03:39.000 --> 03:42.000]  para que as coisas não fiquem descompassadas.
+[03:42.000 --> 03:47.000]  E aí, quando a gente fala de duas cardinalidades, a gente olha para dois aspectos da cardinalidade.
+[03:47.000 --> 03:52.000]  A gente fala da cardinalidade máxima, da cardinalidade mínima.
+[03:52.000 --> 04:00.000]  Quando eu falo de cardinalidade máxima, eu estou dizendo quantas oponências eu posso conectar no máximo.
+[04:00.000 --> 04:05.000]  É como se eu dissesse assim, quantos cursos no máximo o aluno pode ter?
+[04:05.000 --> 04:11.000]  Quantas disciplinas no máximo o professor pode ter?
+[04:11.000 --> 04:20.000]  E aí isso vai resultar num relacionamento, três tipos de relacionamento.
+[04:20.000 --> 04:25.000]  Um para um, um para muitos e muitos para muitos.
+[04:25.000 --> 04:31.000]  Os simples extremos que aí a gente vai, eu vou passar por eles de novo.
+[04:31.000 --> 04:39.000]  Quando eu falo de um relacionamento de prazo, é um relacionamento onde eu digo que eu devo fazer um vínculo entre os dois lados do meu relacionamento.
+[04:39.000 --> 04:47.000]  É um relacionamento que eu digo para vocês que eu só vou poder fazer um lado,
+[04:48.000 --> 04:53.000]  eu só vou fazer um lado conectado ao outro em uma única distância.
+[04:53.000 --> 04:57.000]  É como se eu dissesse, uma conta pertence a uma pessoa.
+[04:57.000 --> 05:01.000]  Uma conta de e-mail vai pertence a uma pessoa.
+[05:01.000 --> 05:08.000]  Eu tenho do lado meu usuário e do outro lado minha testa de e-mail e vai ter um relacionamento muito afriando para o aluno dele.
+[05:08.000 --> 05:13.000]  E aí eu digo que uma conta de e-mail pertence a uma única pessoa.
+[05:14.000 --> 05:22.000]  E aí o inverso disso seria eu dizer, uma pessoa só faz o meio dele numa conta que ele tem de caras caras.
+[05:23.000 --> 05:26.000]  Qual o impacto disso quando eu coloco no meu sistema?
+[05:26.000 --> 05:35.000]  Quando eu estou lá no meu banco de dados, vou desenhar como se fosse o meu banco de dados.
+[05:36.000 --> 05:39.000]  Se eu pegar aqui, o que seria?
+[05:39.000 --> 05:47.000]  A minha lista de pessoas, do outro lado, a minha lista de contas de e-mail que ele é responsável.
+[05:48.000 --> 05:53.000]  E aí eu chego aqui e coloco o e-mail, por exemplo, como se fosse o setor.
+[05:53.000 --> 05:58.000]  Vizinho, arroba, PICL, PQ, PQL.
+[05:58.000 --> 06:03.000]  Aí eu indigo, esse e-mail cadastrado que está aí, ele só pode ser...
+[06:07.000 --> 06:11.000]  Esse e-mail que está aí, ele só pode pertence a uma única pessoa.
+[06:11.000 --> 06:17.000]  E aí eu chego aqui e digo, o nome desse e-mail, ele se chama João.
+[06:18.000 --> 06:21.000]  Esse cadastro eu vou colocar lá no meu banco.
+[06:21.000 --> 06:25.000]  Por que essa marginalidade é importante?
+[06:25.000 --> 06:29.000]  Porque se eu chego aqui, deixa eu só colocar aqui.
+[06:29.000 --> 06:32.000]  Isso aqui eu vou falar do relacionamento.
+[06:39.000 --> 06:42.000]  Um relacionamento para mim.
+[06:42.000 --> 06:47.000]  Eu estou dizendo que uma pessoa tem um e-mail e um e-mail para quem são eles.
+[06:47.000 --> 06:54.000]  Aí eu chego aqui, vou colocar aqui, por exemplo, eu quero cadastrar o meu sistema lá, a mesma pessoa.
+[06:54.000 --> 07:01.000]  Aí eu vou dizer, João, ele vai ser responsável também pelo e-mail chamado TI arroba EFCE.
+[07:01.000 --> 07:07.000]  Na hora que eu fizer isso, o meu banco de dados vai chegar aqui e vai dizer, você já tem...
+[07:07.000 --> 07:11.000]  João já é responsável por um e-mail.
+[07:12.000 --> 07:20.000]  Essa informação que você está tentando inserir, essa data que você está tentando inserir, não vai ser possível inserir.
+[07:20.000 --> 07:24.000]  Porque já tem uma coisa vinculada a essa pessoa.
+[07:24.000 --> 07:29.000]  E seu banco de dados, que aí é a questão de por que a gente deixa de usar e, inclusive,
+[07:29.000 --> 07:32.000]  passa a utilizar o banco de dados ao longo da história.
+[07:32.000 --> 07:37.000]  Na hora que você está lá no seu front-end, faz esse cadastro ali,
+[07:37.000 --> 07:42.000]  e no ano vai ser vinculado ao e-mail TI arroba EFCE.
+[07:42.000 --> 07:47.000]  E manda para o seu banco de dados, o seu banco de dados é rejeitar isso pra ele.
+[07:47.000 --> 07:51.000]  Essa informação não entra no banco de dados.
+[07:51.000 --> 07:57.000]  Por mais que você tenha que submetê-lo, o seu banco de dados não vai deixar isso passar.
+[07:57.000 --> 08:00.000]  Por isso que a gente coloca a personalidade aqui.
+[08:00.000 --> 08:02.000]  Porque funciona o inverso também.
+[08:02.000 --> 08:06.000]  E aí, um mês de e-mail que eu digo que está responsável por esse e-mail agora é Maria.
+[08:06.000 --> 08:11.000]  Como eu já tenho esse e-mail cadastrado na minha base, esse e-mail que eu vou colocar no Nero Rúpo,
+[08:11.000 --> 08:14.000]  só pra vocês entenderem, ele já está cadastrado lá dentro.
+[08:14.000 --> 08:19.000]  Eu tento cadastrar isso daqui, o meu banco de dados ele recheia.
+[08:19.000 --> 08:22.000]  Ele não deixa de passar.
+[08:22.000 --> 08:28.000]  E aí, esse tipo de coisa é o que traz vantagem, por exemplo, porque tem um rúpo lá dentro que é de céu,
+[08:29.000 --> 08:37.000]  e quando dá esse plástico, esse tipo é algum, e as outras são bem pouco contadas.
+[08:40.000 --> 08:43.000]  Ontem tinha mais um lá com três.
+[08:49.000 --> 08:54.000]  E aí, ele rejeita essa informação, ele não deixa essa informação entrar no seu banco.
+[08:55.000 --> 09:01.000]  Essa é a vantagem de eu controlar isso, amigo, do meu banco de dados e não fazer isso a nível de arquivo.
+[09:01.000 --> 09:05.000]  Porque nada me impediria a nível de arquivo fazer isso daqui.
+[09:05.000 --> 09:11.000]  Chegar e dizer, é só uma pessoa responsável, mas eu quero colocar ali que agora tem mais uma pessoa responsável.
+[09:11.000 --> 09:16.000]  Então eu quebrei a regra que foi estabelecida quando eu dou a nível de arquivo.
+[09:16.000 --> 09:20.000]  Se eu colocar o nível de banco, isso não passa.
+[09:20.000 --> 09:23.000]  Isso é quando eu digo que é um plano.
+[09:23.000 --> 09:27.000]  Eu digo que eu sou obrigado a ter ouvido o dilúvio.
+[09:27.000 --> 09:30.000]  Porque a gente está falando de carnalidade máxima.
+[09:30.000 --> 09:35.000]  Quando eu estou falando de carnalidade máxima, eu estou ignorando a mínima.
+[09:35.000 --> 09:39.000]  Eu estou ignorando, por exemplo, a informação que diz assim,
+[09:39.000 --> 09:45.000]  não quer dizer que aqui eu tenho um e-mail, não quer dizer que aqui eu tenho outra pessoa.
+[09:45.000 --> 09:48.000]  Essa segunda pessoa é chamada Maria.
+[09:48.000 --> 09:52.000]  Não quer dizer que Maria tem que ter um e-mail vinculado a ela.
+[09:52.000 --> 09:57.000]  Porque eu estou falando da carnalidade máxima.
+[09:57.000 --> 10:02.000]  Eu estou dizendo o máximo de contas de e-mail que podem estar vinculadas a uma pessoa.
+[10:02.000 --> 10:05.000]  Mas eu não estou falando ainda com mínima.
+[10:05.000 --> 10:09.000]  Eu não estou dizendo que Maria tem que ter e-mail carnalizado lá dentro.
+[10:09.000 --> 10:14.000]  Segundo a carnalidade que eu mostrei para vocês,
+[10:14.000 --> 10:18.000]  isso é um relacionamento de um para-ruídos.
+[10:18.000 --> 10:25.000]  Um para-ruídos já vai ser a possibilidade que eu levantei aqui, antes de dizer assim.
+[10:28.000 --> 10:32.000]  Eu tenho uma pessoa, chamada Joana,
+[10:32.000 --> 10:36.000]  que está vinculada a...
+[10:36.000 --> 10:38.000]  aqui eu tenho os dois sentidos.
+[10:38.000 --> 10:40.000]  Vamos fazer aqui, eu posso inverter.
+[10:40.000 --> 10:45.000]  Ou se eu quero ter um e-mail controlado por mais de uma pessoa,
+[10:45.000 --> 10:49.000]  ou se eu quero permitir que a mesma pessoa tenha mais de um e-mail.
+[10:49.000 --> 10:52.000]  Vamos fazer primeiro o...
+[10:52.000 --> 10:56.000]  assim, como vocês podem ver, quantidades e e-mails.
+[11:01.000 --> 11:06.000]  Quando eu digo, por exemplo, Joana pode ter dois e-mails carassados,
+[11:06.000 --> 11:10.000]  ou seja, de uma pessoa, ela pode ter muitos da outra entidade.
+[11:10.000 --> 11:15.000]  E aí o meu banco passa a aceitar isso aqui.
+[11:15.000 --> 11:20.000]  A mesma pessoa, o mesmo joão que está aí carassado,
+[11:20.000 --> 11:25.000]  ele passa a ter um domínio sobre dois e-mails e o meu sistema não viu problema com isso.
+[11:25.000 --> 11:27.000]  Beleza?
+[11:27.000 --> 11:29.000]  Tranquilo?
+[11:29.000 --> 11:32.000]  Qual a situação inversa disso daqui?
+[11:32.000 --> 11:37.000]  A situação inversa é dizer que um e-mail pode ser controlado por muitas pessoas.
+[11:37.000 --> 11:41.000]  É a situação que estava aqui antes de eu dizer assim.
+[11:41.000 --> 11:45.000]  Esse e-mail que eu ensino, ele tem duas pessoas vinculadas a ele.
+[11:45.000 --> 11:48.000]  E essas pessoas são Joana e Maria.
+[11:48.000 --> 11:53.000]  Meu banco de gás está controlando ele por um e-mail que é o mesmo,
+[11:53.000 --> 11:57.000]  só que eu tenho duas pessoas ao mesmo tempo vinculadas com esse e-mail.
+[11:58.000 --> 12:02.000]  Se as pessoas não têm acesso a esse e-mail.
+[12:02.000 --> 12:05.000]  Meu banco de gás não tem problema com isso.
+[12:05.000 --> 12:09.000]  Na hora de eu representar, a gente vai colocar que você quer para ele.
+[12:09.000 --> 12:14.000]  Só que eu invertei qual é a minimalidade que ele fez.
+[12:14.000 --> 12:17.000]  Só depende de como você está desenhando.
+[12:17.000 --> 12:25.000]  Nesse caso, eu coloco, por exemplo, pessoas do lado esquerdo e meio do lado direito.
+[12:26.000 --> 12:30.000]  Então eu coloco no que seria, nesse caso seria um e-mail para um.
+[12:30.000 --> 12:33.000]  E um e-mail para o outro lado.
+[12:33.000 --> 12:35.000]  E aí tem um desenho, né?
+[12:35.000 --> 12:37.000]  Eu esqueci de mostrar para vocês.
+[12:37.000 --> 12:40.000]  Vou só voltar com o desenho aqui na questão da leitura.
+[12:40.000 --> 12:45.000]  Quando a gente está fazendo a leitura, você sempre vai ignorar que a minimalidade está próximo
+[12:45.000 --> 12:48.000]  a onde você está começando o seu e-mail.
+[12:48.000 --> 12:53.000]  Esse e-mail que está selecionado, você ignora ele e você vai ler.
+[12:53.000 --> 13:01.000]  Uma distância de empregado gerosia um departamento.
+[13:01.000 --> 13:04.000]  E um departamento, vocês ignoram isso daqui?
+[13:04.000 --> 13:11.000]  Um departamento é gerosizado por um empregado, tá?
+[13:11.000 --> 13:15.000]  Essa não é a única forma de...
+[13:15.000 --> 13:18.000]  Essa não é a única forma de fazer, de dar de imaginação.
+[13:18.000 --> 13:22.000]  Existem outras formas de se desenhar isso.
+[13:22.000 --> 13:26.000]  Existem formas, por exemplo, de considerar o número da leitura.
+[13:26.000 --> 13:27.000]  Isso daqui, tá?
+[13:27.000 --> 13:31.000]  É como se a gente estivesse fazendo um empregado gerosizando um departamento.
+[13:31.000 --> 13:37.000]  Aí vão ter outros autores que vão fazer essa abundância.
+[13:37.000 --> 13:44.000]  Por isso que eu coloquei no meu slide ontem, que isso aqui era baseado no retado livro do Reus.
+[13:44.000 --> 13:54.000]  Que a forma foi definida para fazer o dinado de relacionamento baseado no álbum do subredenador original.
+[13:54.000 --> 13:59.000]  É a única adaptação que teve, foram umas figuras.
+[13:59.000 --> 14:05.000]  Mas existem outros modelos, onde há formas de leitura, de figura também.
+[14:05.000 --> 14:07.000]  Há uma forma de representar.
+[14:07.000 --> 14:11.000]  Mas, isso é só para vocês que já vêm cientes e existem outros modelos por aí,
+[14:11.000 --> 14:13.000]  se vocês procurarem.
+[14:13.000 --> 14:17.000]  A gente dá aqui uma jornalinha para vocês que podem ver outros símbolos.
+[14:17.000 --> 14:20.000]  E aí, quando eu vou fazer uma leitura dessa daqui,
+[14:20.000 --> 14:23.000]  aí eu tenho a mesma situação, um departamento.
+[14:23.000 --> 14:30.000]  Em um departamento que estão lotados, em empregados, um empregado está lotado em outro departamento.
+[14:30.000 --> 14:38.000]  Nesse aqui seria, eu tenho um e-mail gerenciado por muitas pessoas.
+[14:38.000 --> 14:46.000]  Uma pessoa pode gerenciar muitos efeitos.
+[14:46.000 --> 14:50.000]  Aqui eu poderia ver a situação daquele e-mail gerenciado.
+[14:58.000 --> 15:00.000]  Muitos para muitos.
+[15:00.000 --> 15:05.000]  Em relacionamento com muitos para muitos, ele não tem limite para nenhum dos dados.
+[15:05.000 --> 15:09.000]  Então, eu posso chegar aqui e dizer, vou colocar isso logo no exemplo,
+[15:09.000 --> 15:13.000]  eu vou dizer que o João agora é responsável pelo e-mail da AI
+[15:13.000 --> 15:19.000]  e ele também é responsável pelo e-mail de cima, ao mesmo tempo.
+[15:19.000 --> 15:25.000]  E aí eu posso estender isso e dizer, Pedro aqui também vai entrar,
+[15:25.000 --> 15:29.000]  aí também vai ser responsável pelo e-mail também.
+[15:29.000 --> 15:33.000]  Então, eu tenho aqui, por exemplo,
+[15:33.000 --> 15:42.000]  uma pessoa que se repete, que é responsável por dois e-mails,
+[15:50.000 --> 15:55.000]  que é responsável por dois e-mails, que é João.
+[15:55.000 --> 16:07.000]  Eu tenho esses dois e-mails aqui, que ele está sendo gerenciado por essas duas pessoas e-mails.
+[16:07.000 --> 16:13.000]  Então, aqui eles estão sendo gerenciados e aqui eles também estão sendo gerenciados.
+[16:13.000 --> 16:18.000]  Eu tenho, de um lado, uma repetição de nomes de pessoas,
+[16:18.000 --> 16:22.000]  do outro lado, uma repetição de nomes de e-mails também.
+[16:23.000 --> 16:25.000]  Então, ele não controla.
+[16:25.000 --> 16:31.000]  E aí eu disse para vocês que o Comunidades não vai controlar, vai ser extremamente.
+[16:31.000 --> 16:36.000]  Eu estou dizendo que é mais de um, mas eu não estou dizendo, por exemplo,
+[16:36.000 --> 16:39.000]  que vai ser o máximo de e-mails.
+[16:39.000 --> 16:46.000]  O Comunidades não faz isso, não nativamente.
+[16:46.000 --> 16:51.000]  Você pode criar um mecanismo que vai criar um bloqueio, mas não nativamente,
+[16:51.000 --> 16:53.000]  como a gente está fazendo aqui.
+[16:53.000 --> 16:58.000]  Dizem, olha, o máximo é um e aqui ele só vai entender, tá?
+[16:58.000 --> 17:00.000]  É mais do que um.
+[17:00.000 --> 17:04.000]  Se você vai colocar lá, cara, dois, dez, ou vinte, seu tanto que dá,
+[17:04.000 --> 17:06.000]  ele não vai mais falar.
+[17:06.000 --> 17:12.000]  Ele vai passar, aceitar qualquer informação que você coloque.
+[17:12.000 --> 17:18.000]  Como eu leio isso daqui, eu vou dizer que um entregado atua em um dos projetos
+[17:18.000 --> 17:23.000]  que eu vou dizer que um projeto atua em empregados.
+[17:23.000 --> 17:28.000]  Isso, o que eu mostrei para vocês, eu estou falando somente de cardinalidade máxima.
+[17:28.000 --> 17:32.000]  É somente um máximo que eu quero no dia inicial.
+[17:32.000 --> 17:37.000]  O outro lado, por que a gente gosta de ter a cardinalidade máxima?
+[17:37.000 --> 17:46.000]  Toda vez que só tiver um e-mailzinho, cada vez que só tiver uma informaçãozinho assim,
+[17:46.000 --> 17:50.000]  isso aqui é a cardinalidade máxima, tá?
+[17:50.000 --> 17:54.000]  Então, ele não vai aqui sozinha quando eu estiver falando da minha.
+[17:54.000 --> 17:59.000]  Se ele tiver uma única informação, ele está lá com a cardinalidade máxima.
+[17:59.000 --> 18:03.000]  Se eu estiver falando de minha, eu estou falando de um alumínio de ocorrências.
+[18:03.000 --> 18:08.000]  Só que um alumínio de ocorrências ele vai prender para duas situações.
+[18:08.000 --> 18:12.000]  Ou eu estou dizendo que é obrigatório, ou eu estou dizendo que é opcional.
+[18:12.000 --> 18:18.000]  Se eu estou dizendo que é obrigatório, ou eu estou dizendo que é opcional, ou eu estou dizendo que é um alumínio de ocorrências.
+[18:18.000 --> 18:21.000]  E aí, eles vão viver desse jeito aqui.
+[18:21.000 --> 18:23.000]  Em paredes.
+[18:23.000 --> 18:26.000]  E aí, a primeira informação vai ser a minha.
+[18:26.000 --> 18:28.000]  E a segunda informação vai ser a máxima.
+[18:28.000 --> 18:32.000]  Então, aqui, por exemplo, eu estou dizendo, ó, isso aqui é um alumínio de ocorrências.
+[18:32.000 --> 18:34.000]  Um alumínio de ocorrências.
+[18:34.000 --> 18:38.000]  Eu estou dizendo que o relacionamento não é ocorrido.
+[18:38.000 --> 18:43.000]  Mas, se esse relacionamento existir, ele é o máximo ocorrido.
+[18:43.000 --> 18:51.000]  Aqui, eu estou dizendo, o relacionamento é opcional, não é obrigatório, porque ele é zero.
+[18:51.000 --> 18:58.000]  Mas, se esse relacionamento existir, e ele pode ser ocorrido, como ele pode ser mais ocorrido?
+[18:58.000 --> 19:01.000]  Então, a gente só diz que ele é ocorrido.
+[19:01.000 --> 19:03.000]  É muito ocorrido, na verdade.
+[19:03.000 --> 19:06.000]  Mas, aqui, ele vai vir na representação só um alumínio em cima.
+[19:06.000 --> 19:09.000]  E aí, vocês vão ter que enfrentar ele feliz a um ou mais.
+[19:09.000 --> 19:11.000]  Ele vai aceitar isso.
+[19:12.000 --> 19:15.000]  Como é que a gente vê isso aqui?
+[19:16.000 --> 19:19.000]  Como a gente vê? Um departamento.
+[19:19.000 --> 19:25.000]  E aí, eu tenho aqui, zero e um, próximo a ele, que é um alumínio na do outro lado.
+[19:25.000 --> 19:27.000]  E nós, ele fica na mesma forma.
+[19:27.000 --> 19:28.000]  Um departamento.
+[19:28.000 --> 19:34.000]  Em um departamento, estão montados no mínimo um alumínio da casa.
+[19:34.000 --> 19:39.000]  Ou seja, eu tenho que ver o relacionamento com o alumínio entregado ali.
+[19:39.000 --> 19:42.000]  E eu posso ter mais de um empregado.
+[19:43.000 --> 19:46.000]  Qual o impacto isso tem no meu front-end?
+[19:46.000 --> 19:52.000]  O meu front-end significa que, quando eu estiver caracando um departamento,
+[19:52.000 --> 19:59.000]  vai ter que existir um campo onde eu indique que é o relacionamento daquele departamento.
+[20:00.000 --> 20:03.000]  Eu coloquei as duas canalidades aqui só pra te ver.
+[20:04.000 --> 20:07.000]  Só pra fazer essas considerações aqui pra vocês.
+[20:07.000 --> 20:12.000]  Quando eu coloco um departamento no meu sistema, quando o tempo está na sala do meu sistema,
+[20:12.000 --> 20:15.000]  eu devo indicar no mínimo um empregado.
+[20:15.000 --> 20:18.000]  Posso indicar mais de um? Posso.
+[20:18.000 --> 20:20.000]  Mas eu tenho que indicar pelo menos um.
+[20:21.000 --> 20:24.000]  O que vai indicar aqui, que eu posso vir até a linha onde eu clico no botão,
+[20:24.000 --> 20:27.000]  vou cadastrar um empregado agora, é só pra fazer isso.
+[20:27.000 --> 20:29.000]  O que esse bando está pedindo?
+[20:29.000 --> 20:31.000]  Leitura no sentido inverso.
+[20:31.000 --> 20:37.000]  O empregado está lotado em zero ou um departamento.
+[20:37.000 --> 20:42.000]  Ou seja, relacionamento deste como este não é obrigatório.
+[20:42.000 --> 20:47.000]  Mas, se esse relacionamento existir, ele é no máximo um.
+[20:47.000 --> 20:51.000]  E aí, a gente lê isso aqui dizendo que, quando eu vou cadastrar um empregado,
+[20:51.000 --> 20:56.000]  eu não preciso associar com o departamento, porque é um zero.
+[20:56.000 --> 21:00.000]  Mas, se eu for associar, eu só posso associar a um.
+[21:02.000 --> 21:04.000]  Beleza?
+[21:04.000 --> 21:06.000]  Tranquilo?
+[21:06.000 --> 21:08.000]  Show.
+[21:08.000 --> 21:11.000]  Peguei esse mesmo exemplo aqui, só para trocar algumas categoridades,
+[21:11.000 --> 21:15.000]  só para a consideração aqui relacionada com o desenvolvimento.
+[21:15.000 --> 21:19.000]  Aqui agora eu tenho um zero e aqui eu tenho um e um.
+[21:19.000 --> 21:25.000]  Um departamento coordenado por um empregado.
+[21:25.000 --> 21:27.000]  Um e um, e no máximo um.
+[21:27.000 --> 21:31.000]  Aqui, existe uma repetição de um, mas não de um e um.
+[21:31.000 --> 21:35.000]  Isso aqui eu poderia substituir somente por um número um.
+[21:35.000 --> 21:38.000]  Como se eu tivesse falado, mas isso aqui é uma categoridade máxima.
+[21:38.000 --> 21:44.000]  Porque, como eles são publicados, então ele pode virar sozinho como um e um.
+[21:44.000 --> 21:49.000]  E ele é entendido como que tem uma obrigatualidade particular.
+[21:49.000 --> 21:54.000]  Mesmo se plançando, cadastrando um departamento, eu devo indicar quem é o seu coordenador.
+[21:54.000 --> 22:01.000]  Se isso não for passado nos notificados, eu vou indicar essa informação aqui.
+[22:01.000 --> 22:07.000]  Leitura no sentido inverso, um empregado coordena CELO ou M departamentos.
+[22:07.000 --> 22:11.000]  Um empregado não precisa coordenar um departamento.
+[22:11.000 --> 22:18.000]  Ele pode coordenar um departamento ou ele pode coordenar M departamentos.
+[22:18.000 --> 22:24.000]  Eu suponho que vai aceitar isso aqui sem problemas.
+[22:24.000 --> 22:26.000]  Beleza?
+[22:26.000 --> 22:28.000]  Dúvidas?
+[22:28.000 --> 22:31.000]  Tranquilos?
+[22:33.000 --> 22:37.000]  Esses aqui são exemplos muito bruscos daqueles que estão lá.
+[22:37.000 --> 22:42.000]  Antes de eu pedir a gente consumir um monte de contas, virar contas associadas, só para ouvir tudo.
+[22:42.000 --> 22:45.000]  Primeira atividade diante de vocês.
+[22:45.000 --> 22:50.000]  Essa daqui é...
+[22:50.000 --> 22:54.000]  Primeiro que eu mostro o modelo para vocês.
+[22:54.000 --> 23:00.000]  Eu queria que vocês me passem tudo o sábado para ver as funcionalidades dele.
+[23:00.000 --> 23:07.000]  Ele dá para você desenhar bastante coisa dele.
+[23:07.000 --> 23:15.000]  Para vocês que estão fazendo a conversão de modelos, que sejam as partes principais, mas...
+[23:15.000 --> 23:19.000]  A gente vai testando...
+[23:19.000 --> 23:23.000]  O que é que a gente tem aqui?
+[23:23.000 --> 23:28.000]  A gente tem um modelo aqui, que era o nosso modelo conceitual.
+[23:28.000 --> 23:33.000]  O nosso modelo conceitual é esse que está de raciocinamento que a gente está desenhando.
+[23:33.000 --> 23:39.000]  Se vocês olharem aqui do lado, tem a gente alguns desenhos longos que vocês vão utilizar.
+[23:39.000 --> 23:53.000]  Só que essa barrinha de configuração articulada, ela sempre vai trazer algumas coisas que agilizam na hora de você fazer.
+[23:53.000 --> 23:57.000]  Eu vou pegar, por exemplo, esse daqui que está pronto.
+[23:58.000 --> 24:03.000]  E vou colocar ali para que vocês vejam ele funcionando.
+[24:03.000 --> 24:06.000]  Então aqui eu tenho duas entidades.
+[24:06.000 --> 24:11.000]  Minha entidade cliente e minha entidade chamada compra.
+[24:11.000 --> 24:13.000]  O que é que eu vou fazer?
+[24:13.000 --> 24:19.000]  No primeiro repandro lá de cima, que está lá desenhando, eu crio uma nova entidade com ele.
+[24:19.000 --> 24:23.000]  Vou clicar aqui e ele vai me trazer o campo de entidade.
+[24:24.000 --> 24:29.000]  Vou clicar normalmente e ele vai trazer meu segundo campo de entidade.
+[24:32.000 --> 24:38.000]  Não sei se eu disse a vocês, esse software ele é desenvolvido no Brasil para algumas pessoas.
+[24:38.000 --> 24:43.000]  Isso aqui, por exemplo, é uma versão nova dele.
+[24:43.000 --> 24:50.000]  Eu acho que nessa versão nova, pelo menos aqui no meu sistema, ele não permite que eu clique duas vezes aqui.
+[24:50.000 --> 24:54.000]  Eu não sei se o Brasil é uma versão antiga, eu lembro que ele fazia isso.
+[24:54.000 --> 24:58.000]  Então para você ir nomear isso aqui, você vai usar essa barrinha até a outra aqui.
+[24:58.000 --> 25:00.000]  A informação está lá no cantinho.
+[25:00.000 --> 25:03.000]  Então você vai colocar aqui, por exemplo, esse solo.
+[25:03.000 --> 25:05.000]  Vamos entrar nesse mesmo que vai ver.
+[25:10.000 --> 25:13.000]  Meu segundo campo se chama compra.
+[25:14.000 --> 25:20.000]  Tem duas entidades ali, então eu quero interligar isso ali.
+[25:21.000 --> 25:24.000]  Qual a possibilidade que eu tenho de interligar?
+[25:24.000 --> 25:28.000]  Aqui do lado eu tenho um relacionamento, nesse losão aqui daqui.
+[25:28.000 --> 25:32.000]  A gente hoje, por enquanto, a gente só vai usar isso daqui.
+[25:32.000 --> 25:37.000]  O retângulo lá de cima de entidade, o losão que está aqui embaixo.
+[25:37.000 --> 25:41.000]  E às vezes a gente vai usar esse daqui que é o meu atributo.
+[25:41.000 --> 25:45.000]  Tem uma forma mais fácil de eu fazer um relacionamento.
+[25:45.000 --> 25:48.000]  Eu clicar, por exemplo, em cliente.
+[25:48.000 --> 25:51.000]  Quando eu clico em cliente, ele me abre aqui embaixo.
+[25:51.000 --> 25:54.000]  Qual é o relacionamento que você quer?
+[25:54.000 --> 25:58.000]  E aí aqui ele vai abrir a lista de todas as entidades disponíveis.
+[25:58.000 --> 26:00.000]  Cliente, compra.
+[26:00.000 --> 26:04.000]  Quando eu clico em conta, ele tem esse relacionamento para mim.
+[26:04.000 --> 26:09.000]  Quando eu faço isso, eu faço por exemplo, aqui um possui.
+[26:09.000 --> 26:13.000]  Eu vou renomear esse relacionamento para possui também.
+[26:13.000 --> 26:17.000]  E aí, o que é que falta a gente ajustar as cardinalidades?
+[26:17.000 --> 26:20.000]  Um pra 1 e um pra N.
+[26:20.000 --> 26:23.000]  Esse daqui já cera o N e eu clico em cima.
+[26:23.000 --> 26:26.000]  Lista de cardinalidade um pra 1.
+[26:26.000 --> 26:30.000]  Lista de cardinalidades um pra N.
+[26:34.000 --> 26:39.000]  Mesmo a forma que eu quisesse criar aqui, por exemplo, uma outra entidade.
+[26:39.000 --> 26:42.000]  Por exemplo, N.
+[26:42.000 --> 26:46.000]  Meu endereço, eu poderia dizer meu endereço.
+[26:46.000 --> 26:49.000]  Ele se relaciona com o cliente.
+[26:49.000 --> 26:52.000]  E aí ele vai fazer ali.
+[26:52.000 --> 26:55.000]  Criação de atributos.
+[26:55.000 --> 26:58.000]  Em duas formas vocês criarem atributos aqui.
+[26:58.000 --> 27:01.000]  Ou você vai clicar nesse símbolozinho daqui.
+[27:01.000 --> 27:04.000]  Ou você vai clicar na entidade que você quer.
+[27:04.000 --> 27:07.000]  E aí ele vai abrir.
+[27:07.000 --> 27:11.000]  Vocês vão ver que às vezes ele vai ficar meio embolado assim.
+[27:11.000 --> 27:15.000]  E quando você clica na entidade, ele tem aqui.
+[27:15.000 --> 27:18.000]  Vou organizar atributos.
+[27:18.000 --> 27:21.000]  Dá dois cliques aí e ele dá uma ajustadinha para vocês.
+[27:21.000 --> 27:24.000]  Outra forma de você fazer isso é este ali.
+[27:24.000 --> 27:27.000]  Você tem que editar atributos.
+[27:27.000 --> 27:30.000]  E aí você consegue dar dois cliques.
+[27:30.000 --> 27:33.000]  E você sai criando sua lista de atributos aqui.
+[27:33.000 --> 27:36.000]  E ele joga o outro modelo ao começar.
+[27:36.000 --> 27:39.000]  Beleza?
+[27:39.000 --> 27:42.000]  Noções básicas de como isso aqui funciona.
+[27:42.000 --> 27:45.000]  Você só pega um jeito de mexer na tática.
+[27:45.000 --> 27:48.000]  Aqui não tem muito o que eu deixo de mostrar para vocês.
+[27:48.000 --> 27:51.000]  Porque é o software criado de uma paciental.
+[27:51.000 --> 27:54.000]  Você aqui só fazia um papel antes.
+[27:54.000 --> 27:57.000]  Hoje vocês tem possibilidade de usar um software assim.
+[27:57.000 --> 28:00.000]  Para fazer alguns desenhos desses aí.
+[28:00.000 --> 28:03.000]  Primeira questão aqui da área.
+[28:03.000 --> 28:06.000]  Como vocês tentam resolver.
+[28:06.000 --> 28:09.000]  E aí a gente vai ver essa daqui.
+[28:09.000 --> 28:12.000]  Dá um slide de vocês.
+[28:12.000 --> 28:15.000]  Eu acho que...
+[28:15.000 --> 28:18.000]  Toda pessoa utiliza muito somente um inóvel para noar.
+[28:18.000 --> 28:21.000]  Um inóvel pode ser utilizado por outra pessoa.
+[28:21.000 --> 28:24.000]  Um inóvel nem sempre será utilizado por uma pessoa.
+[28:24.000 --> 28:27.000]  São expulsões de uma forma um pouco mais simples.
+[28:27.000 --> 28:30.000]  Porque uma do meu poder eu tinha mostrado para vocês.
+[28:30.000 --> 28:33.000]  A ideia é que vocês tem que tocar.
+[28:33.000 --> 28:36.000]  E sair esses conceitos de entidade.
+[28:36.000 --> 28:39.000]  Relacionamentos e capitalidades.
+[28:39.000 --> 28:42.000]  Vamos lá.
+[28:42.000 --> 28:45.000]  Dá um agredimento de um pouco mais.
+[29:45.000 --> 29:48.000]  E aí.
+[29:48.000 --> 29:51.000]  E aí.
+[29:51.000 --> 29:54.000]  E aí.
+[29:54.000 --> 29:57.000]  E aí.
+[29:57.000 --> 30:00.000]  E aí.
+[30:00.000 --> 30:03.000]  E aí.
+[30:03.000 --> 30:06.000]  Em.
+[30:06.000 --> 30:09.000]  Em.
+[30:09.000 --> 30:12.000]  Em.
+[30:12.000 --> 30:15.000]  Em.
+[30:15.000 --> 30:18.000]  Em.
+[30:18.000 --> 30:21.000]  Em.
+[30:21.000 --> 30:24.000]  Em.
+[30:24.000 --> 30:27.000]  e aí
+[30:28.000 --> 30:31.000]  e aí
+[30:34.000 --> 30:37.000]  e aí
+[30:38.000 --> 30:41.000]  e aí
+[30:44.000 --> 30:47.000]  e aí
+[30:48.000 --> 30:51.000]  e aí
+[30:51.000 --> 30:54.000]  e aí
+[30:57.000 --> 31:00.000]  e aí
+[31:01.000 --> 31:04.000]  e aí
+[31:05.000 --> 31:08.000]  e aí
+[31:10.000 --> 31:13.000]  e aí
+[31:15.000 --> 31:18.000]  e aí
+[31:48.000 --> 32:09.640]  Atenção Revolta Crate
